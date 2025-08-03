@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is post office and royal mail the same
+
+Answer:
+No
+
+Context:
+The Post Office provides information on services and accepts postal items and payment on behalf of the two collection and delivery divisions of Royal Mail Group, Royal Mail and Parcelforce. These include a variety of ordinary and guaranteed services both for delivery within the United Kingdom and to international destinations. Postage stamps (including commemorative stamps and other philatelic items) are sold, while applications for redirection of mail are accepted on behalf of Royal Mail.

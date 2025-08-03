@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is jack sikma in the hall of fame
+
+Answer:
+Yes
+
+Context:
+In 2006, Sikma was voted as one of the 100 Legends of the IHSA Boys Basketball Tournament, a group of former players and coaches in honor of the 100 anniversary of the IHSA boys basketball tournament. On June 27, 2017, Sikma was inducted into the Small College Basketball Hall of Fame as part of their second class . Inducted alongside Sikma were Zelmo Beaty, Walt Frazier, Bob Love, Elmore Smith, Jim Spivey, Rico Swanson, George Tinsley, and Al Tucker.

@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is the movie fool's gold a true story
+
+Answer:
+No
+
+Context:
+Fool's Gold is a 2008 American adventure-romance film from Warner Bros. Pictures about a recently divorced couple who rekindle their romantic life while searching for a lost treasure. The film was directed by Andy Tennant and reunites the How to Lose a Guy in 10 Days stars Matthew McConaughey and Kate Hudson.

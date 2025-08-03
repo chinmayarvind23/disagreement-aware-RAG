@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is it illegal to carry a pistol in your car in texas
+
+Answer:
+No
+
+Context:
+Gov. Perry also signed H.B. 1815 after passage by the 2007 Legislature, a bill that allows any Texas resident to carry a handgun in the resident's motor vehicle without a CHL or other permit. The bill revised Chapter 46, Section 2 of the Penal Code to state that it is in fact not ``Unlawful Carry of a Weapon'', as defined by the statute, for a person to carry a handgun while in a motor vehicle they own or control, or to carry while heading directly from the person's home to that car. However, lawful carry while in a vehicle requires these four critical qualifiers: (1) the weapon must not be in plain sight (in Texas law, ``plain sight'' and ``concealed'' are mutually exclusive opposing terms); (2) the carrier cannot be involved in criminal activities, other than Class C traffic misdemeanors; (3) the carrier cannot be prohibited by state or federal law from possessing a firearm; and (4) the carrier cannot be a member of a criminal gang.

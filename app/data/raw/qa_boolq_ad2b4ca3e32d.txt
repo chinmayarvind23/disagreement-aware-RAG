@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: can liquid latex be used as an adhesive
+
+Answer:
+Yes
+
+Context:
+As the latex dries it becomes very sticky and will stick to itself if accidentally folded over. Most manufacturers offer a slick spray for latex once it is dry to take away the stickiness allowing the movement of the model's limbs. Alternatively, shimmer powders can be dusted over dried liquid latex to create metallic effects. One advantage to the tackiness of liquid latex is that it can act as an adhesive to attach things to the paint, such as zippers.

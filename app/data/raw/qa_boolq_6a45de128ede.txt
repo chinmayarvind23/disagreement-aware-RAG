@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: the movie rudy based on a true story
+
+Answer:
+Yes
+
+Context:
+Daniel Eugene ``Rudy'' Ruettiger (born August 23, 1948) is a motivational speaker who played college football at the University of Notre Dame. His early life and career at Notre Dame was the inspiration for the 1993 film Rudy.

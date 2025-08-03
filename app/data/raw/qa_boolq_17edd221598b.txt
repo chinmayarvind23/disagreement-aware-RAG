@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: true or false anaphylaxis generally only affects the skin and eyes
+
+Answer:
+No
+
+Context:
+Anaphylaxis is a serious allergic reaction that is rapid in onset and may cause death. It typically causes more than one of the following: an itchy rash, throat or tongue swelling, shortness of breath, vomiting, lightheadedness, and low blood pressure. These symptoms typically come on over minutes to hours.

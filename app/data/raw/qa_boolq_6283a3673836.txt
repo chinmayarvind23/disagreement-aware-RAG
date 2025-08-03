@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is a denatured protein still able to function
+
+Answer:
+No
+
+Context:
+Denaturation is a process in which proteins or nucleic acids lose the quaternary structure, tertiary structure and secondary structure which is present in their native state, by application of some external stress or compound such as a strong acid or base, a concentrated inorganic salt, an organic solvent (e.g., alcohol or chloroform), radiation or heat. If proteins in a living cell are denatured, this results in disruption of cell activity and possibly cell death. Protein denaturation is also a consequence of cell death. Denatured proteins can exhibit a wide range of characteristics, from conformational change and loss of solubility to aggregation due to the exposure of hydrophobic groups. Denatured proteins lose their 3D structure and therefore cannot function.

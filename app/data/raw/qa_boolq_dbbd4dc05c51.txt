@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: are long term capital gains taxed at a lower rate
+
+Answer:
+Yes
+
+Context:
+In the United States of America, individuals and corporations pay U.S. federal income tax on the net total of all their capital gains. The tax rate depends on both the investor's tax bracket and the amount of time the investment was held. Short-term capital gains are taxed at the investor's ordinary income tax rate and are defined as investments held for a year or less before being sold. Long-term capital gains, on dispositions of assets held for more than one year, are taxed at a lower rate.

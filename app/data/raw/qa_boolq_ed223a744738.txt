@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is there an age limit to run for congress
+
+Answer:
+Yes
+
+Context:
+In the United States, a person must be aged 35 or over to be President or Vice President, 30 or over to be a Senator, and 25 or over to be a Representative, as specified in the U.S. Constitution. Most states in the U.S. also have age requirements for the offices of Governor, State Senator, and State Representative. Some states have a minimum age requirement to hold any elected office (usually 21 or 18).

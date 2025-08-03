@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: does the nissan rogue have all wheel drive
+
+Answer:
+No
+
+Context:
+The Rogue is powered by a 170 hp (127 kW; 172 PS), 2.5 L four-cylinder QR25DE engine mated to a standard continuously variable transmission, and comes standard with front-wheel-drive. The Rogue costs less than Nissan's Murano crossover SUV, but at 105.8 cu ft (3.00 m) vs. 108.1 cu ft (3.06 m) offers only slightly less passenger volume than its V6-powered sibling, and a nearly equal cargo area of 39.3 cu ft (1,110 L) vs. 39.6 cu ft (1,120 L).

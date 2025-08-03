@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is there a difference between saline and lactated ringer's
+
+Answer:
+Yes
+
+Context:
+Side effects may include allergic reactions, high blood potassium, volume overload, and high blood calcium. It may not be suitable for mixing with certain medications and some recommend against use in the same infusion as a blood transfusion. Ringer's lactate solution has a lower rate of acidosis as compared with normal saline. Use is generally safe in pregnancy and breastfeeding. Ringer's lactate solution is in the crystalloid family of medication. It is the same tonicity as blood.

@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is station 19 a grey's anatomy spin off
+
+Answer:
+Yes
+
+Context:
+Station 19 is an American action-drama television series created by Stacy McKee for ABC. McKee, Shonda Rhimes, Betsy Beers, and Paris Barclay serve as executive producers on the series, which is the second spin-off to Grey's Anatomy. Set in Seattle, the series focuses on the lives of the men and women at Seattle Fire Station 19. The series is produced by Shondaland and ABC Studios, with McKee serving as showrunner.

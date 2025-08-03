@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: will there be a green lantern 2 movie
+
+Answer:
+No
+
+Context:
+Green Lantern was released on June 17, 2011, and received generally negative reviews; most criticized the film for its screenplay, inconsistent tone, choice and portrayal of villains, and its use of CGI, while some praised Reynolds' performance. Reynolds would later voice his dissatisfaction with the film. The film underperformed at the box office, grossing $219 million against a production budget of $200 million. Due to the film's negative reception and disappointing box office performance, Warner Bros. canceled any plans for a sequel, instead opting to reboot the character in the DC Extended Universe line with the film Green Lantern Corps, set for release in 2020.

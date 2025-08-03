@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: does lex luthor know who superman is in smallville
+
+Answer:
+Yes
+
+Context:
+Season seven displayed Lex's descent into darkness; he has a brother-like relationship with Grant Gabriel (Michael Cassidy), the new editor of the Daily Planet newest editor, until it's revealed Grant is actually a clone of Lex's late brother. After Lex buys the Daily Planet, Grant attempts to keep Lex from being controlling, thus Lex has his brother's clone murdered and staged as a failed mugging. Lex then discovers that the previous symbols are connected to the secret organization Veritas, which his father is a part of. The Veritas members learned that an alien visitor known as ``The Traveler'' would arrive in Smallville during the meteor shower of 1989. At this time, Lex realizes that Lionel has been covering up the Traveler's existence and subsequently kills his own father for it. He eventually discovers that the Veritas members knew of a means to control the Traveler, so Lex sets out to find the device. The device, an orb he finds in the mantle above a fireplace in the Luthor mansion, leads Lex to the Fortress of Solitude, where he is confronted by Clark. Having finally discovered Clark's secret, Lex uses the orb to bring down the Fortress around Clark and himself.

@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is it legal to carry a sgian dubh
+
+Answer:
+Yes
+
+Context:
+When worn as part of the national dress of Scotland, the sgian-dubh is legal in Scotland, England and Wales. In Scotland under the Criminal Law (Consolidation) (Scotland) Act 1995 Sec. 49, Sub-sec. 5(c); in England and Wales, under the Criminal Justice Act 1988 (section 139) and the Offensive Weapons Act 1996 (section 4).

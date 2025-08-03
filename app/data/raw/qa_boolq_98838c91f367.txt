@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: do you have to register to vote in america
+
+Answer:
+Yes
+
+Context:
+Voter registration in the United States takes place at the county level, and is a prerequisite to voting at federal, state and local elections. The only exception is North Dakota, although North Dakota law allows cities to register voters for city elections.

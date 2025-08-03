@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: has michigan ever won a national championship in football
+
+Answer:
+Yes
+
+Context:
+Michigan began competing in intercollegiate football in 1879. The Wolverines joined the Big Ten Conference at its inception in 1896, and other than a hiatus from 1907 to 1916, have been members since. Michigan has won or shared 42 league titles, and, since the inception of the AP Poll in 1936, has finished in the top 10 a total of 38 times. The Wolverines claim 11 national championships, most recently that of the 1997 squad voted atop the final AP Poll.

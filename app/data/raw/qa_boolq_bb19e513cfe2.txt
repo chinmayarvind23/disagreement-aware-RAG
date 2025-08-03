@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is watcher in the woods a disney movie
+
+Answer:
+Yes
+
+Context:
+Filmed at Pinewood Studios and the surrounding areas in Buckinghamshire, England, The Watcher in the Woods was one of several live-action films produced by Walt Disney Productions in the 1980s, when the studio was targeting young adult audiences. The film suffered from various production problems and was pulled from theatres after its initial release in 1980. It was re-released in 1981 after being re-edited and a revised ending added.

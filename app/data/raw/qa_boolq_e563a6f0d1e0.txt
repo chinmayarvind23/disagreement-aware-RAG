@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: would a person sink in a corn silo
+
+Answer:
+Yes
+
+Context:
+Grain entrapment, or grain engulfment, occurs when a person becomes submerged in grain and cannot get out without assistance. This more frequently occurs at storage facilities such as silos or grain elevators, but has been known to occur around any large quantity of grain, even freestanding piles outdoors. Usually, unstable grain collapses suddenly, wholly or partially burying workers who may be within it. Entrapment occurs when victims are partially submerged but cannot remove themselves; engulfment occurs when they are completely buried within the grain. Engulfment has a very high fatality rate.

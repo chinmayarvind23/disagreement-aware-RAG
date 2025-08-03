@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is national guard boot camp the same as army
+
+Answer:
+Yes
+
+Context:
+United States Army Basic Training (also known as Initial Entry Training, IET) is the recruit training program of physical and mental preparation for service in the United States Army, United States Army Reserve or Army National Guard.

@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is there such a thing as a coywolf
+
+Answer:
+Yes
+
+Context:
+Coywolf (sometimes called woyote) is an informal term for a canid hybrid descended from coyotes and gray wolves. All members of the genus Canis are genetically closely related because their chromosomes number 78, therefore they can interbreed. One genetic study indicates that these two species genetically diverged relatively recently (around 55,000--117,000 years ago). Genomic studies indicate that nearly all North American gray wolf populations possess some degree of admixture with coyotes following a geographic cline, with the lowest levels occurring in Alaska, and the highest in Ontario and Quebec, as well as Atlantic Canada.

@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is the olympic torch always lit in greece
+
+Answer:
+Yes
+
+Context:
+The Olympic flame is a symbol used in the Olympic movement. Several months before the Olympic Games, the Olympic flame is lit at Olympia, Greece. This ceremony starts the Olympic torch relay, which formally ends with the lighting of the Olympic cauldron during the opening ceremony of the Olympic Games. The flame then continues to burn in the cauldron for the duration of the Games, until it is extinguished during the Olympic closing ceremony.

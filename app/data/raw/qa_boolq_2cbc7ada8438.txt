@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: do texas state troopers have to wear hats
+
+Answer:
+Yes
+
+Context:
+Troopers' headwear is unique in that instead of the peaked caps or campaign hats popular with other agencies, cowboy hats are worn with the duty uniform. Felt hats are worn in colder weather and straw hats are worn in warmer weather. Dress uniforms are similar to the patrol uniform, with the addition of a blue tie, long-sleeved shirt and black cowboy boots. Dress for various ceremonial units adds white gloves, a white ascot, a black Sam Browne shoulder strap and a red shoulder cord.

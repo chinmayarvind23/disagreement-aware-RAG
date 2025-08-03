@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: can you buy cadburys creme eggs all year round
+
+Answer:
+No
+
+Context:
+Creme eggs are available annually between 1 January and Easter Day. In the UK in the 1980s, Cadbury made Creme Eggs available year-round but sales dropped and they returned to seasonal availability.

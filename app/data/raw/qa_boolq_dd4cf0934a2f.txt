@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: was the movie dunkirk based on a book
+
+Answer:
+No
+
+Context:
+Director Christopher Nolan conceived the film in the mid-1990s, when he and his future wife Emma Thomas sailed across the English Channel, following the path of many small boats in the Dunkirk evacuation. Nolan considered improvising the entire film instead of writing a script, but Thomas convinced him otherwise. In 2015, Nolan wrote a 76-page screenplay, which was about half the length of his usual scripts and his shortest to date. Its precise structure necessitated fictional characters, rather than ones based on eyewitnesses.

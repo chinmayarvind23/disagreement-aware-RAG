@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is vaping illegal if you are under 18
+
+Answer:
+Yes
+
+Context:
+As of 8 August 2016, the FDA extended its regulatory power to include e-cigarettes. Under this ruling the FDA will evaluate certain issues, including ingredients, product features and health risks, as well their appeal to minors and non-users. The FDA rule also bans access to minors. A photo ID is required to buy e-cigarettes, and their sale in all-ages vending machines is not permitted. The FDA in September 2016 has sent warning letters for unlawful underage sales to online retailers and retailers of e-cigarettes.

@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: does oregon have the stand your ground law
+
+Answer:
+No
+
+Context:
+The states that have adopted stand-your-ground in practice, either through case law/precedent, jury instructions or by other means, are California, Colorado, Illinois, New Mexico, Oregon, Virginia, and Washington.

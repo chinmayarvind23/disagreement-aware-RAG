@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: are doc martens still made in the uk
+
+Answer:
+Yes
+
+Context:
+In 2004 a new range of Dr. Martens was launched in an attempt to appeal to a wider market, and especially young people. The shoes and boots were intended to be more comfortable, and easier to break in, and included some new design elements. Dr. Martens also began producing footwear again at the Cobbs Lane Factory in Wollaston, England in 2004. These products are part of the ``Vintage'' line, which the company advertises as being made to the original specifications. Sales of these shoes are low in comparison to those made in Asia, however; in 2010, the factory was producing about 50 pairs per day. In 2005, the R. Griggs company was given an award by the ``Institute for Turnaround'' for implementing a successful restructure.

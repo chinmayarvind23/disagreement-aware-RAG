@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: paths from the cerebral cortex to the spinal cord are called the corticospinal tracts
+
+Answer:
+Yes
+
+Context:
+The corticospinal tract conducts impulses from the brain to the spinal cord. It is made up of a lateral and anterior tract. The corticospinal tract is involved in voluntary movement. The majority of fibres of the corticospinal tract cross over in the medulla oblongata, resulting in muscles being controlled by the opposite side of the brain. The corticospinal tract also contains Betz cells (the largest pyramidal cells), which are not found in any other region of the body.

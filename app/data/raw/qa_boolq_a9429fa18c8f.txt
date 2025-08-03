@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: has tom hanks ever won an academy award
+
+Answer:
+Yes
+
+Context:
+Actor and filmmaker Tom Hanks has been honored with numerous awards and nominations, including two consecutive Oscars for Philadelphia (1993) and Forrest Gump (1994). Tom Hanks has won a total of 50 awards on this list.

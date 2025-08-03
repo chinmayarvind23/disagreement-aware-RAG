@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: does the cat in the hat have a name
+
+Answer:
+No
+
+Context:
+The story begins as a girl named Sally and her brother, who serves as the narrator of the book, sit alone in their house on a cold, rainy day, staring wistfully out the window. Then they hear a loud bump which is quickly followed by the arrival of the Cat in the Hat, a tall anthropomorphic cat in a red and white striped hat and a red bow tie. The Cat proposes to entertain the children with some tricks that he knows. The children's pet fish refuses, insisting that the Cat should leave. The Cat responds by balancing the fish on the tip of his umbrella. The game quickly becomes increasingly trickier, as the Cat balances himself on a ball and tries to balance lots of household items on his limbs until he falls on his head, dropping everything he was holding. The fish admonishes him again, but the Cat in the Hat just proposes another game.

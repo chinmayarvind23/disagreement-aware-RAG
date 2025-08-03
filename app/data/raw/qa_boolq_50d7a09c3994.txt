@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: the former soviet union broke into separate states
+
+Answer:
+Yes
+
+Context:
+The post-Soviet states, also collectively known as the former Soviet Union (FSU) or former Soviet Republics, are the states that emerged and re-emerged from the Union of Soviet Socialist Republics in its breakup in 1991, with Russia internationally recognised as the successor state to the Soviet Union after the Cold War. The three Baltic states were the first to declare their independence, between March and May 1990, claiming continuity from the original states that existed prior to their annexation by the Soviet Union in 1940. The remaining 12 republics all subsequently seceded. 12 of the 15 states, excluding the Baltic states, initially formed the CIS and most joined CSTO, while the Baltic states focused on European Union and NATO membership.

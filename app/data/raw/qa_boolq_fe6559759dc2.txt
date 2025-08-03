@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: do you need a gun license to buy a gun in nj
+
+Answer:
+Yes
+
+Context:
+In New Jersey, anyone seeking to purchase firearms (one does not need to obtain a Firearm Purchaser Identification card to own, possess in the home, transport firearms to and from authorized target range, to a gunsmith for purposes of repair, or to the woods or fields of the state for purposes of hunting ) is required to obtain a lifetime Firearm Purchaser Identification card, commonly referred to as FID, for the purchase of rifles and shotguns. To purchase a handgun, a separate permit is needed from the Chief of Police of their municipality, or the Superintendent of State Police if the municipality does not have a local police department. A permit is required for each handgun to be purchased and expires after 90 days but may be extended for an additional 90 days at the discretion of the Chief of Police or Superintendent of State Police. These, like the initial Firearms Purchaser Identification Card (FID), are provided to applicants on a shall-issue basis. They require in-depth application questioning, multiple references and background checks via the State Bureau of Identification and New Jersey State Police; however, authorities do not have discretion and must issue permits to applicants who satisfy the criteria described in the statutes. Reasons for denial include being convicted of a crime (equivalent to a felony) or disorderly persons offense (equivalent to a misdemeanor) in the case of domestic violence. As of August 2013 anyone on the terror watchlist is also disqualified.

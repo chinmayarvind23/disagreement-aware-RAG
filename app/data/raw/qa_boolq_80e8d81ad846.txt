@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: does the euro sign go before the number
+
+Answer:
+Yes
+
+Context:
+The euro sign (€) is the currency sign used for the euro, the official currency of the Eurozone in the European Union (EU). The design was presented to the public by the European Commission on 12 December 1996. The international three-letter code (according to ISO standard ISO 4217) for the euro is EUR. In Unicode it is encoded at U+20AC € euro sign (HTML &#8364; &euro; ). In English, the sign precedes the value (for instance, €10, not 10 €, unlike most other European languages). In some style guides, but not others, the euro sign is unspaced.

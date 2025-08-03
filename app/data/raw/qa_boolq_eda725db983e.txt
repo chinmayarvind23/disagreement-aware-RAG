@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: do you have to bounce the ball in afl
+
+Answer:
+Yes
+
+Context:
+A running bounce, or simply bounce, is a skill in the sport of Australian rules football (necessitated by the Laws of the Game) when a player, while running, bounces the ball on the ground and back in their hands.

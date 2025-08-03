@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: are static shock and black lightning the same person
+
+Answer:
+No
+
+Context:
+It was recently revealed that prior to his abduction, Static teamed with Justice League member Black Lightning in order to stop former Blood Syndicate member Holocaust, who had tried to kill the superhero while he was acting as the keynote speaker at Ernest Hemingway High's senior graduation.

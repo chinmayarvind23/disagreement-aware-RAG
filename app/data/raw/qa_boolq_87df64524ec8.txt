@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is there an international airport in naples italy
+
+Answer:
+Yes
+
+Context:
+Naples International Airport (IATA: NAP, ICAO: LIRN) (Italian: Aeroporto Internazionale di Napoli) is the international airport serving Naples, Italy. It is located 3.2 NM (5.9 km; 3.7 mi) north-northeast of the city in the Capodichino district of Naples. The airport has two terminal buildings: Terminal 1 is for scheduled flights and Terminal 2, located away from the airfield, is used for charter operations.

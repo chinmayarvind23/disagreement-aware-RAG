@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: does hot and sour soup have a lot of sodium
+
+Answer:
+Yes
+
+Context:
+Soup preparation may use chicken or pork broth, or may be meat-free. Common key ingredients in the American Chinese version include bamboo shoots, toasted sesame oil, wood ear, cloud ear fungus, day lily buds, vinegar, egg, corn starch, and white pepper. Other ingredients include button mushrooms and small slices of tofu skin. It is comparatively thicker than the Chinese cuisine versions due to the addition of cornstarch. This soup is usually considered a healthy option at most Chinese establishments and, other than being high in sodium, is a very healthy soup overall.

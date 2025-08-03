@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: was call me by your name a book
+
+Answer:
+Yes
+
+Context:
+Call Me by Your Name is a 2007 novel by American writer André Aciman that centers on a blossoming romantic relationship between an intellectually precocious and curious 17-year-old American-Italian Jewish boy named Elio Perlman and a visiting 24-year-old American Jewish scholar named Oliver in 1980s Italy. The novel chronicles their summer romance and the 20 years that follow.

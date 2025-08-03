@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is one flew over the cuckoo's nest a true story
+
+Answer:
+No
+
+Context:
+One Flew Over the Cuckoo's Nest (1962) is a novel written by Ken Kesey. Set in an Oregon psychiatric hospital, the narrative serves as a study of institutional processes and the human mind as well as a critique of behaviorism and a tribute to individualistic principles. It was adapted into the broadway (and later off-broadway) play One Flew Over the Cuckoo's Nest by Dale Wasserman in 1963. Bo Goldman adapted the novel into a 1975 film directed by Miloš Forman, which won five Academy Awards.

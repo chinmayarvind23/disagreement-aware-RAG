@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: do blue jays take over other birds nests
+
+Answer:
+Yes
+
+Context:
+Blue jays are not very picky about nesting locations. If no better place is available -- e.g. in a heavily deforested area -- they will even use places like the large mailboxes typical of the rural United States. They also appropriate nests of other mid-sized songbirds as long as these are placed in suitable spots; American robin nests are commonly used by blue jays, for example.

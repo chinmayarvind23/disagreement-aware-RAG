@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is the sears tower the same as the hancock building
+
+Answer:
+No
+
+Context:
+Chicago, the third-largest city in the United States, is home to 1,315 completed high-rises, 44 of which stand taller than 600 feet (183 m). The tallest building in the city is the 110-story Willis Tower (formerly the Sears Tower), which rises 1,451 feet (442 m) in the Chicago Loop and was completed in 1974. Sears Tower was the tallest building in the world from its completion, and remained the tallest building in the United States until May 10, 2013 when it was overtaken by One World Trade Center in New York City. The second-, third- and fourth-tallest buildings in Chicago are the Trump International Hotel & Tower, the Aon Center and 875 North Michigan Avenue (formerly the John Hancock Center), respectively. Of the ten tallest buildings in the United States, four are located in Chicago. As of February 2013, the entire city had 105 buildings at least 500 feet (152 m) tall.

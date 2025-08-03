@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is carrie underwood in the movie soul surfer
+
+Answer:
+Yes
+
+Context:
+Soul Surfer is a 2011 American biographical drama film directed by Sean McNamara, based on the 2004 autobiography Soul Surfer: A True Story of Faith, Family, and Fighting to Get Back on the Board by Bethany Hamilton about her life as a surfer after a horrific shark attack and her recovery. The film stars AnnaSophia Robb, Helen Hunt, Dennis Quaid, and Lorraine Nicholson with Carrie Underwood, Kevin Sorbo, Sonya Balmores, Branscombe Richmond, and Craig T. Nelson.

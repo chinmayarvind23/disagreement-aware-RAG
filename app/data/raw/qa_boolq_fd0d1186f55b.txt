@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is it legal to drink in public in london
+
+Answer:
+Yes
+
+Context:
+Drinking in public is legal in England and Wales -- one may carry a drink from a public house down the street (though it is preferred that the user requests a plastic glass to avoid danger of breakage and because the taking of the glass could be considered an offence of Theft as only the drink has been purchased), and one may purchase alcohol at an off-licence and immediately begin drinking it outside. Separately, one may drink on aeroplanes and on most National Rail train services, either purchasing alcohol on-board or consuming one's own.

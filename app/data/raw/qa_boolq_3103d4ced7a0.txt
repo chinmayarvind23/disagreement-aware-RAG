@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: do you need to fast for random glucose test
+
+Answer:
+No
+
+Context:
+Random glucose test ( a.k.a. random blood glucose) is a blood sugar test taken from a non-fasting subject.

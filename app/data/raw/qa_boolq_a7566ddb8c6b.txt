@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is an australian shepherd the same as an australian cattle dog
+
+Answer:
+No
+
+Context:
+The Texas Heeler is a cross between the Australian Cattle Dog and the Australian Shepherd that was first registered with the Animal Research Foundation (ARF) in 1970. The ARF has registered Australian Cattle Dogs without papers as ``Australian Cattledog Queensland Heelers'' since 1965 and was the first organisation to recognise the Australian Shepherd. Although originally bred for its ability to work cattle, the Texas Heeler is increasingly used as a pet and a companion in dog sports. As with most cross breeds, the Texas Heeler's size and appearance is a variable combination of the parent breeds.

@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: do supreme court judges get secret service protection
+
+Answer:
+No
+
+Context:
+The Supreme Court of the United States Police is a small U.S. federal law enforcement agency headquartered in the District of Columbia, whose mission is to ensure the integrity of the constitutional mission of the U.S. Supreme Court by protecting the Supreme Court building, the Justices, employees, guests, and visitors. In accordance with 28 U.S.C. § 672, the Supreme Court Police falls under the jurisdiction of the Marshal of the United States Supreme Court who is appointed by the Supreme Court. The Marshal and the Supreme Court Police are authorized by 40 U.S.C. § 6121 to police the Supreme Court Building and protect the Justices, employees of the Court, and visitors to the Court.

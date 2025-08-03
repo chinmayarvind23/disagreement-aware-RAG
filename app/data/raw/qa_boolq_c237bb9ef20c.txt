@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is there such a thing as unbreakable glass
+
+Answer:
+Yes
+
+Context:
+Unbreakable glass is glass, or glass substitute, which does not display the normal fragility of glass - in general the term is not used to refer to something that is absolutely unbreakable.

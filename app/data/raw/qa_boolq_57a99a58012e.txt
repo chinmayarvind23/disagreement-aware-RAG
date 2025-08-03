@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: do they find the body in stand by me
+
+Answer:
+Yes
+
+Context:
+After a series of misadventures and self-revelations, the boys locate the body. However, local hoodlum ``Ace'' Merrill and his gang, including Chris' older brother ``Eyeball'' Chambers, arrive to claim the body and the credit for finding it. When Chris refuses to allow this, Ace draws a switchblade with intent to kill him, but Gordie intervenes with the pistol Chris had stolen. Ace and his gang leave and Ace vows revenge.

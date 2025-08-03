@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: when sandy hit nj was it a hurricane
+
+Answer:
+No
+
+Context:
+Sandy developed from a tropical wave in the western Caribbean Sea on October 22, quickly strengthened, and was upgraded to Tropical Storm Sandy six hours later. Sandy moved slowly northward toward the Greater Antilles and gradually intensified. On October 24, Sandy became a hurricane, made landfall near Kingston, Jamaica, re-emerged a few hours later into the Caribbean Sea and strengthened into a Category 2 hurricane. On October 25, Sandy hit Cuba as a Category 3 hurricane, then weakened to a Category 1 hurricane. Early on October 26, Sandy moved through the Bahamas. On October 27, Sandy briefly weakened to a tropical storm and then restrengthened to a Category 1 hurricane. Early on October 29, Sandy curved west-northwest (the ``left turn'' or ``left hook'') and then moved ashore near Brigantine, New Jersey, just to the northeast of Atlantic City, as a post-tropical cyclone with hurricane-force winds.

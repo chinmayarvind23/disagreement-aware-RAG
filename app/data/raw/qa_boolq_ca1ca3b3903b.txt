@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: can you have two jobs in south africa
+
+Answer:
+Yes
+
+Context:
+In the absence of a contrary provision in the contract, there is nothing to preclude employees from holding two compatible jobs, provided the second is not conducted during the working hours they are obliged to devote to the first job. Contractual provisions limiting employees' moonlighting activities are, however, permissible.

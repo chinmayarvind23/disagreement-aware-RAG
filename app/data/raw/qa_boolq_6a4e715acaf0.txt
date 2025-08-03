@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: has anyone ever pitched back to back no hitters
+
+Answer:
+Yes
+
+Context:
+John Samuel Vander Meer (November 2, 1914 -- October 6, 1997) was an American professional baseball player. He played in Major League Baseball as a pitcher, most notably for the Cincinnati Reds. Vander Meer is best known for being the only pitcher in Major League Baseball history to throw two consecutive no-hitters. After the impressive start to his major league career, he experienced problems controlling the accuracy of his pitching, and his later career was marked by inconsistent performances.

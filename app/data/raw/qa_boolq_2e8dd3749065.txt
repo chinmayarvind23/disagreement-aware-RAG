@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: can i own a handgun in the uk
+
+Answer:
+No
+
+Context:
+Members of the public may own sporting rifles and shotguns, subject to licensing, but handguns were effectively banned after the Dunblane school massacre in 1996 with the exception of Northern Ireland. Dunblane was the UK's first and only school shooting. There has been one spree killing since Dunblane, in June 2010 involving a legally owned shotgun.

@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: are tomatoes a member of the nightshade family
+
+Answer:
+Yes
+
+Context:
+The Solanaceae, or nightshades, are an economically important family of flowering plants. The family ranges from annual and perennial herbs to vines, lianas, epiphytes, shrubs, and trees, and includes a number of important agricultural crops, medicinal plants, spices, weeds, and ornamentals. Many members of the family contain potent alkaloids, and some are highly toxic, but many, including tomatoes, potatoes, eggplant, bell/chili peppers, and tobacco are widely used. The family belongs to the order Solanales, in the asterid group and class Magnoliopsida (dicotyledons). The Solanaceae consists of about 98 genera and some 2,700 species, with a great diversity of habitats, morphology and ecology.

@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: did the english win the hundred years war
+
+Answer:
+No
+
+Context:
+Several overwhelming English victories in the war--especially at Crécy, Poitiers, and Agincourt--raised the prospects of an ultimate English triumph, and convinced the English to continue pouring money and manpower into the war over many decades. However, the greater resources of the French monarchy prevented the English kings from ever completing the conquest of France. Starting in 1429, decisive French victories at Orléans, Patay, Formigny, and Castillon concluded the war in favour of the House of Valois, with England permanently losing most of its possessions on the continent.

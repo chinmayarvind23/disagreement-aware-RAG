@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: can i use dexron iii for dexron ii
+
+Answer:
+Yes
+
+Context:
+In 1993, GM released new Dexron-III fluid (GM Spec GM6417M and later GMN10055). It is generally backward-compatible with transmissions using earlier Dexron fluids or Type-A/Suffix-A fluid. However this specification failed to address a number of issues concerning long term durability such as shear stability and fluid oxidation. Dexron-III underwent a number of iterations in an attempt to address various shortcomings but was eventually replaced by new thinking i.e. DEXRON-VI.

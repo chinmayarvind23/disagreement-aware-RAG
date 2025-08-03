@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: does any other country have daylight savings time
+
+Answer:
+Yes
+
+Context:
+Most areas in North America and Europe, and some areas in the Middle East, observe daylight saving time (DST), while most areas of Africa and Asia do not. In South America, most countries in the north of the continent near the equator do not observe DST, while Paraguay and southern parts of Brazil do. The practice of observing daylight saving time in Oceania is also mixed, with New Zealand and parts of southeastern Australia observing DST, while most other areas do not.

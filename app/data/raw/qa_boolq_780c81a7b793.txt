@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: does a jury have to be unanimous uk
+
+Answer:
+No
+
+Context:
+Initially, the jury will be directed to try to reach a unanimous verdict. If they fail to reach a unanimous verdict, the judge may later (after not less than two hours) give directions that a majority verdict will be acceptable, but still no less than ten to two, although the jury should continue to try to reach a unanimous verdict if possible.

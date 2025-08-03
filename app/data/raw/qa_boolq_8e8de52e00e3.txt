@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is it legal to carry a gun in nyc
+
+Answer:
+Yes
+
+Context:
+New York state law does not require a license to own or possess long guns, but does require a permit to legally possess or own a pistol. However, all firearms must comply with the NY SAFE Act, which bans guns considered ``assault weapons'' from ownership by private citizens, unless they were owned prior to the ban.

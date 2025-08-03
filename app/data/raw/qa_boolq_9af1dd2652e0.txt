@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: do you have to have a college degree to take the bar exam
+
+Answer:
+Yes
+
+Context:
+In the canonical case, lawyers seeking admission must earn a Juris Doctor degree from a law school approved by the jurisdiction, and then pass a bar exam administered by it. Typically, there is also a character and fitness evaluation, which includes a background check. However, there are exceptions to each of these requirements. A lawyer who is admitted in one state is not automatically allowed to practice in any other. Some states have reciprocal agreements that allow attorneys from other states to practice without sitting for another full bar exam; such agreements differ significantly among the states.

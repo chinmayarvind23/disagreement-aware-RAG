@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: do new zealand and australia have the same flag
+
+Answer:
+No
+
+Context:
+The New Zealand flag was the first national flag to incorporate the stars of the Southern Cross constellation, and remains distinctive as the only national flag that includes only those stars from the constellation that actually form the cross itself. The Australian flag adopted in 1901 also has the Union Flag in the canton and the Southern Cross on the fly. The cross on the New Zealand flag is composed of the four prime stars of the Southern Cross constellation, each being a red five pointed star with a white outline. The Australian flag has six white stars, five of which have seven points (the Commonwealth Star) and a five pointed star, Epsilon Crucis, the smaller star of the Southern Cross constellation which does not form part of the actual cross itself is also included. Australia's flag features a large Commonwealth Star below the Union Flag as it is a symbol of Australia.

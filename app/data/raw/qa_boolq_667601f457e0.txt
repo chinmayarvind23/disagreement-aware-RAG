@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: has england won any world cup in cricket
+
+Answer:
+No
+
+Context:
+Twenty nations have qualified for the Cricket World Cup at least once. Seven teams have competed in every tournament, five of which have won the title. The West Indies won the first two tournaments, Australia has won five, India has won two, while Pakistan and Sri Lanka have each won once. The West Indies (1975 and 1979) and Australia (1999, 2003 and 2007) are the only teams to have won consecutive titles. Australia has played in seven of the eleven finals (1975, 1987, 1996, 1999, 2003, 2007, 2015). England has yet to win the World Cup, but has been runners-up three times (1979, 1987, 1992). The best result by a non-Test playing nation is the semi-final appearance by Kenya in the 2003 tournament; while the best result by a non-Test playing team on their debut is the Super 8 (second round) by Ireland in 2007.

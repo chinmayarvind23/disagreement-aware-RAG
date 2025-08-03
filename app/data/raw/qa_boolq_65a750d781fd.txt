@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is tim brown in the hall of fame
+
+Answer:
+Yes
+
+Context:
+Timothy Donell Brown (born July 22, 1966) is a former American football wide receiver who played professionally in the National Football League (NFL). He played college football for Notre Dame, where he won the Heisman Trophy, becoming the first wide receiver to win the award. He spent sixteen years with the Los Angeles/Oakland Raiders, during which he established himself as one of the NFL's most prolific wide receivers. Brown has also played for the Tampa Bay Buccaneers. In 2015, he was inducted into the Pro Football Hall of Fame.

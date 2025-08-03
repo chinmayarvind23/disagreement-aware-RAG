@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is wheat flour and white flour the same thing
+
+Answer:
+No
+
+Context:
+In terms of the parts of the grain (the grass fruit) used in flour--the endosperm or protein/starchy part, the germ or protein/fat/vitamin-rich part, and the bran or fiber part--there are three general types of flour. White flour is made from the endosperm only. Brown flour includes some of the grain's germ and bran, while whole grain or wholemeal flour is made from the entire grain, including the bran, endosperm, and germ. Germ flour is made from the endosperm and germ, excluding the bran.

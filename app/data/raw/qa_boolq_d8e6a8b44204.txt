@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: can stainless steel be used on induction cooktop
+
+Answer:
+Yes
+
+Context:
+For nearly all models of induction cooktops, a cooking vessel must be made of, or contain, a ferrous metal such as cast iron or some stainless steels. The iron in the pot concentrates the current to produce heat in the metal. If the metal is too thin, or does not provide enough resistance to current flow, heating will not be effective. Most induction tops will not heat copper or aluminum vessels because the magnetic field cannot produce a concentrated current; ``all metal'' induction tops use much higher frequencies to overcome that effect. Any vessel can be used if placed on a suitable metal disk which functions as a conventional hotplate.

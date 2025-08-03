@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is it possible to build an alcohol tolerance
+
+Answer:
+Yes
+
+Context:
+Alcohol tolerance is increased by regular drinking. This reduced sensitivity requires that higher quantities of alcohol be consumed in order to achieve the same effects as before tolerance was established. Alcohol tolerance may lead to (or be a sign of) alcohol dependency.

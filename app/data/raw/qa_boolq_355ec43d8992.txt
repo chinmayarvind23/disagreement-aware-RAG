@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: does age have any influence on attentional ability or inattentional blindness
+
+Answer:
+Yes
+
+Context:
+In a 2015 study, Cary Stothart, Walter Boot, and Daniel Simons attempted to replicate and extend the findings from both Graham and Burke's 2011 study and Steven Most and colleague's 2000 study on Amazon Mechanical Turk using a sample of 515 participants that varied in age. In this study, participants were tasked with counting the number of times a number of white moving objects crossed the vertical midpoint of a display while ignoring a number of black moving objects. The unexpected object in this case was a gray cross that moved horizontally across the display at various distances from the vertical midpoint (this was manipulated between participants). Overall, they found that inattentional blindness susceptibility increases with age, which replicates the finding from Graham and Burke. In fact, they found that every 10 years of age was associated with a 1.3 fold increase in the probability of displaying inattentional blindness. They also found that the probability of inattentional blindness increases as the distance between the observer's focus of attention and the unexpected object increases, which replicates the finding from Most and colleagues. However, they also found that the relationship that age has with inattentional blindness does not change as a function of the unexpected object's distance from the focus of attention, suggesting that useful field of view does not mediate the relationship between age and inattentional blindness.

@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is ferguson jenkins in the hall of fame
+
+Answer:
+Yes
+
+Context:
+Ferguson Arthur ``Fergie'' Jenkins, Jr., CM (born December 13, 1942) is a Canadian former professional baseball player. He was a Major League Baseball (MLB) pitcher for the Philadelphia Phillies, Chicago Cubs, Texas Rangers, and Boston Red Sox, from 1965 through 1983. He also played basketball in the off-season for the Harlem Globetrotters from 1967 to 1969, and pitched two seasons in Canada for the minor league London Majors following his major league career. In 1991, Jenkins became the first Canadian to be inducted into the National Baseball Hall of Fame.

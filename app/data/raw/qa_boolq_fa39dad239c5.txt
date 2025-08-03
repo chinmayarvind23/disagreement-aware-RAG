@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: during his lifetime an athenian citizen could serve on the council of five hundred
+
+Answer:
+Yes
+
+Context:
+No office appointed by lot could be held twice by the same individual. The only exception was the boule or council of 500. In this case, simply by demographic necessity, an individual could serve twice in a lifetime. This principle extended down to the secretaries and undersecretaries who served as assistants to magistrates such as the archons. To the Athenians it seems what had to be guarded against was not incompetence but any tendency to use office as a way of accumulating ongoing power.

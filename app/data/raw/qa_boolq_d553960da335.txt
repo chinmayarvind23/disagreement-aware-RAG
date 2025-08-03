@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is sanskrit the first language of the world
+
+Answer:
+No
+
+Context:
+Sanskrit belongs to the Indo-European family of languages. It is one of the three ancient documented languages that likely arose from a common root language now referred to as the Proto-Indo-European language:

@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is fear the walking dead set before the walking dead
+
+Answer:
+Yes
+
+Context:
+Fear the Walking Dead is an American post-apocalyptic horror drama television series created by Robert Kirkman and Dave Erickson, that premiered on AMC on August 23, 2015. It is a companion series and prequel to The Walking Dead, which is based on the comic book series of the same name by Robert Kirkman, Tony Moore, and Charlie Adlard.

@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is there a black bike week in myrtle beach
+
+Answer:
+Yes
+
+Context:
+Black Bike Week, also called Atlantic Beach Bikefest and Black Bikers Week, is an annual motorcycle rally in the Myrtle Beach, South Carolina area, held on Memorial Day weekend. It is also sometimes called Black Fill-in-the-Blank Week, because it has evolved to attract many non-motorcycling visitors who come for music, socializing and enjoying the beach. Events include motorcycle racing, concerts, parties, and street festivals. Called a ``one-of-a-kind event'' and ``an exhibitionist's paradise'' by Jeffrey Gettleman, Black Bike Week is ``all about riding, styling and profiling,'' in the words of Mayor Irene Armstrong of Atlantic Beach, South Carolina.

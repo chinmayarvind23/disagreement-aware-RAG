@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: will there be a season 2 of marvel's iron fist
+
+Answer:
+Yes
+
+Context:
+The second season of the American web television series Iron Fist, which is based on the Marvel Comics character of the same name, follows Danny Rand / Iron Fist, a martial arts expert with the ability to call upon the power of the Iron Fist. It is set in the Marvel Cinematic Universe (MCU), sharing continuity with the films and other television series of the franchise. The season is produced by Marvel Television in association with ABC Studios, with Raven Metzner serving as showrunner.

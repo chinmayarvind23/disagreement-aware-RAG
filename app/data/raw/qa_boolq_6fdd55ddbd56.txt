@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: has any supreme court nominee not been confirmed
+
+Answer:
+Yes
+
+Context:
+Justices are nominated by the president and then confirmed by the U.S. Senate. A nomination to the Court is considered to be official when the Senate receives a signed nomination letter from the president naming the nominee, which is then entered in the Senate's record. There have been 37 unsuccessful nominations to the Supreme Court of the United States. Of these, 11 nominees were rejected in Senate roll-call votes, 11 were withdrawn by the president, and 15 lapsed at the end of a session of Congress. Six of these unsuccessful nominees were subsequently nominated and confirmed to other seats on the Court. Additionally, although confirmed, seven nominees either declined office or (in one instance) died before assuming office.

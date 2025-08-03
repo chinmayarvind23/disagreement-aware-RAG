@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is job termination the same as being fired
+
+Answer:
+Yes
+
+Context:
+``Firing'' is a common colloquial term in the English language (particularly used in the U.S.) for termination. The term ``firing'' may have been initiated in the 1910s at the National Cash Register Company. Other terms for dismissal are being ``sacked'', ``canned'', ``let go'', ``ran-off'', ``axed'', ``given walking papers'', ``given the pink slip'' or ``boned''. Other terms, more often used in Commonwealth countries, include ``to get the boot'' and ``to get the sack''.

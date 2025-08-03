@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: does liquid coffee mate have to be refrigerated
+
+Answer:
+Yes
+
+Context:
+An unopened bottle of Coffee-Mate can last up to two years with no refrigeration and can stay fresh for two weeks once it is opened. The product is popular in offices where refrigeration may not be available. Non-dairy creamer can be used by individuals who are lactose-intolerant. Once opened, liquid non-dairy creamer should be refrigerated.

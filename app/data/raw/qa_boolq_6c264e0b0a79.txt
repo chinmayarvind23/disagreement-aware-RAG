@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is jim hart in the hall of fame
+
+Answer:
+Yes
+
+Context:
+Hart was named the NFC Player of the Year by UPI, All-NFC and second team All-Pro for the 1974 season. Hart was inducted into the Missouri Sports Hall of Fame in 1998 for his contribution to the sport of football.

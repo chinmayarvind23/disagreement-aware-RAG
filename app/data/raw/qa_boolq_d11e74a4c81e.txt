@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: do dogwood trees grow in the middle east
+
+Answer:
+No
+
+Context:
+Cornus florida, the flowering dogwood, is a species of flowering plant in the family Cornaceae native to eastern North America and northern Mexico. An endemic population once spanned from southernmost coastal Maine south to northern Florida and west to the Mississippi River. The tree is commonly planted as an ornamental in residential and public areas because of its showy bracts and interesting bark structure.

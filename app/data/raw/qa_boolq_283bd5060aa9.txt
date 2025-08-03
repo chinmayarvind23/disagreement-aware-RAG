@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: do you have to pay taxes in the united states
+
+Answer:
+Yes
+
+Context:
+Petitioner attempts to argue an absurd proposition, essentially that the State of Illinois is not part of the United States. His hope is that he will find some semantic technicality which will render him exempt from Federal income tax, which applies generally to all U.S. citizens and residents. Suffice it to say, we find no support in any of the authorities petitioner cites for his position that he is not subject to Federal income tax on income he earned in Illinois.

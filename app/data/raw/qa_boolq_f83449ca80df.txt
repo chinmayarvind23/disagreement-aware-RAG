@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: has anyone scored 6 goals in one game
+
+Answer:
+Yes
+
+Context:
+The current world record for an international is held by Archie Thompson, who scored 13 goals against American Samoa in Australia's 31--0 victory during the 2002 FIFA World Cup qualification. In the same match, David Zdrilic scored 8 goals.

@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is 844 a toll free number in canada
+
+Answer:
+Yes
+
+Context:
+In the United States of America, Canada, and other countries participating in the North American Numbering Plan, a toll-free telephone number has one of the area codes 800, 833, 844, 855, 866, 877, and 888.

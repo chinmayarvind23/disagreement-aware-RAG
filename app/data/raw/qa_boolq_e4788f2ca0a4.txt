@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is there a now you see me 3 coming out
+
+Answer:
+Yes
+
+Context:
+Now You See Me is a series of heist thriller film written by Ed Solomon, Boaz Yakin, and Edward Ricourt. They focus on the actions of a team of illusionists named ``The Four Horsemen'' who pull off near impossible heists. The series features an ensemble cast including Jesse Eisenberg, Mark Ruffalo, Woody Harrelson, Isla Fisher, Dave Franco, Michael Caine, Lizzy Caplan, and Morgan Freeman. The first film was released in 2013, while the second was released in 2016, and a third film is currently in development and set to be released in 2019. The series has received mixed reviews from critics and audiences and grossed nearly $700 million worldwide.

@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: science begins with the premise that knowledge should first be acquired through observation
+
+Answer:
+Yes
+
+Context:
+These terms are used with respect to reasoning (epistemology) to distinguish ``necessary conclusions from first premises'' (i.e., what must come before sense observation) from ``conclusions based on sense observation'' (which must follow it). Thus, the two kinds of knowledge, justification, or argument, may be glossed:

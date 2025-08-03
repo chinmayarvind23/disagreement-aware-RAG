@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: does the world cup final go to penalties
+
+Answer:
+Yes
+
+Context:
+This is a list of all penalty shoot-outs that have occurred in the Finals tournament of the FIFA World Cup. Penalty shoot-outs were introduced as tie-breakers in the 1978 World Cup but did not occur before 1982. The first time a World Cup title was won by penalty shoot-out was in 1994. The only other time was in 2006. By the end of the 2018 edition, 30 shoot-outs have taken place in the World Cup. Of these, only two reached the sudden death stage after still being tied at the end of ``best of five kicks''.

@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: did austria qualify for the world cup 2018
+
+Answer:
+Yes
+
+Context:
+The 2018 FIFA World Cup qualification UEFA Group D was one of the nine UEFA groups for 2018 FIFA World Cup qualification. The group consisted of six teams: Wales, Austria, Serbia, Republic of Ireland, Moldova, and Georgia.

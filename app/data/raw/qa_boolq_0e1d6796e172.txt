@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: are family dollar and dollar general the same company
+
+Answer:
+No
+
+Context:
+Dollar General filed on August 20, 2009 for an initial public offering of up to $750 Million turning the company once again into a publicly traded corporation. In 2013 Dollar General started selling cigarettes in response to its competitor Family Dollar selling cigarettes in 2012. Dollar General's 12th distribution center opened on May 31, 2014 in Bethel, Pennsylvania to serve the northeast and midwest stores. On August 18, 2014, Dollar General lodged a competing bid of $9.7 billion against Dollar Tree for Family Dollar. The bid was rejected on August 20, 2014 by the Family Dollar board, which said it would proceed with the deal with Dollar Tree.

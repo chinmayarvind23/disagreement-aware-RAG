@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: are chess pie and buttermilk pie the same
+
+Answer:
+No
+
+Context:
+Buttermilk pie is a custard-like pie. Originally from the United Kingdom, it is now a traditional pie of the southern United States. It is similar to, and sometimes confused with, chess pie but it does not include cornmeal. The basic filling consists of a mixture of sugar, butter, eggs, buttermilk and wheat flour. Variations on the recipe may include flavorings such as vanilla, lemon zest and nutmeg. Buttermilk pies are made with a pie crust. The filling is poured into the crust and baked until the mixture sets. The pie is best eaten at room temperature after being allowed to cool, but may be eaten either warm from the oven or after being chilled.

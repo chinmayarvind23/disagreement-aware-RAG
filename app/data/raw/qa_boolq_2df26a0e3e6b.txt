@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is porto rico a part of the united states
+
+Answer:
+Yes
+
+Context:
+Puerto Rico (Spanish for ``Rich Port''), officially the Commonwealth of Puerto Rico (Spanish: Estado Libre Asociado de Puerto Rico, lit. ``Free Associated State of Puerto Rico'') and briefly called Porto Rico, is an unincorporated territory of the United States located in the northeast Caribbean Sea.

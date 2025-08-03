@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: will there be a uk general election in 2018
+
+Answer:
+No
+
+Context:
+The next general election in the United Kingdom is scheduled to be held on 5 May 2022 under the Fixed-term Parliaments Act 2011. The election may be held at an earlier date in the event of an early election motion being passed by a super-majority of two-thirds in the House of Commons, or a vote of no confidence in the government which is not followed by a vote of confidence within 14 days.

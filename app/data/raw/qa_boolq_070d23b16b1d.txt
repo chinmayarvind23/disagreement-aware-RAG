@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is popeye the sailor man a disney character
+
+Answer:
+No
+
+Context:
+The 1988 Disney/Touchstone film Who Framed Roger Rabbit featured many classic cartoon characters, and the absence of Popeye was noted by some critics. Popeye (along with Bluto and Olive Oyl) actually had a role planned for the film. However, since the Popeye cartoons were based on a comic strip, Disney found they had to pay licensing fees to both King Features Syndicate and MGM/UA. MGM/UA's pre-May 1986 library (which included Popeye) was being purchased by Turner Entertainment at the time, which created legal complications; thus, the rights could not be obtained and Popeye's cameo was dropped from the film.

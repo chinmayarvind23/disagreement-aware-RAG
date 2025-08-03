@@ -1,0 +1,11 @@
+URL: hf://boolq/train
+Title: BoolQ
+Unanswerable: False
+
+Question: is the movie the wall a true story
+
+Answer:
+No
+
+Context:
+On November 12, 2014, it was announced that Amazon Studios had bought its first ever original spec script by Dwain Worrell, about an American sharpshooter trapped behind a wall by an Iraqi sniper. Worrell wrote his screenplay while teaching English in China. Worrell drew from his background as a playwright to flesh out the second act of the screenplay, which focuses on Isaac's conversation with the sniper. Worrell said, ``What interested me about it was the simple conversation between two people. That could almost be had on a New York City park bench with two guys playing chess. There is that sort of dynamic between the characters in the film.'' The script appeared in the 2014 Black List of most liked un-produced screenplays.
