@@ -10,7 +10,7 @@ class DisagreeHead:
 
     # Fit the logistic regression model on features and labels
     def fit(self, X: np.ndarray, y: np.ndarray):
-        self.model = LogisticRegression(max_iter=200)
+        self.model = LogisticRegression(max_iter=200, class_weight="balanced")
         self.model.fit(X, y)
 
     # Predict the probability of disagreement given features

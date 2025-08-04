@@ -6,6 +6,7 @@ from backend.features import feature_vector
 from backend.disagreement import DisagreeHead
 from llama_index.core.response_synthesizers import get_response_synthesizer
 from llama_index.core.retrievers import BaseRetriever
+from llama_index.core import Settings
 
 DATA_DIR = Path("data")
 MODEL_OUT = DATA_DIR / "disagree_head.joblib"
@@ -30,14 +31,16 @@ def iter_questions_from_files(root="data/raw", limit=300):
                         return
 
 # Get top k passages from retrieved nodes as evidence
-def _nodes_to_passages(nodes, k=3):
+def _nodes_to_passages(nodes, k=3, max_chars=900):
     out = []
     for n in nodes[:k]:
         try:
-            out.append(n.get_text())
+            txt = n.get_text()
+            out.append(txt[:max_chars])
         except Exception:
             pass
     return out
+
 
 # Answer question with the synthesizer and retriever
 # Returns answer, passages of evidence, and nodes retrieved (similarity search results)
@@ -50,15 +53,21 @@ def _answer_once(q: str, retriever: BaseRetriever, synthesizer):
 # Sample answers for a question using the retriever and synthesizer
 # This function tries to get different phrasings of the answer by varying the temperature
 def _sample_answers(q: str, retriever: BaseRetriever, base_synth, n=3):
+    nodes = retriever.retrieve(q)
+    passages = _nodes_to_passages(nodes)
     outs = []
+    temps = (0.35, 0.55, 0.75)[:n]
+    old_temp = getattr(Settings.llm, "temperature", None)
     try:
-        for t in (0.7, 0.9, 0.5)[:n]:
-            synth = get_response_synthesizer(response_mode="compact")
-            a, passages, nodes = _answer_once(q, retriever, synth)
-            outs.append((a, passages, nodes))
-    except Exception:
-        a, passages, nodes = _answer_once(q, retriever, base_synth)
-        outs.append((a, passages, nodes))
+        for t in temps:
+            if hasattr(Settings.llm, "temperature"):
+                Settings.llm.temperature = t
+            resp = base_synth.synthesize(q, nodes)
+            outs.append((str(resp), passages, nodes))
+    finally:
+        if old_temp is not None and hasattr(Settings.llm, "temperature"):
+            Settings.llm.temperature = old_temp
+
     return outs
 
 # Main function to train the disagreement head
@@ -66,6 +75,7 @@ def _sample_answers(q: str, retriever: BaseRetriever, base_synth, n=3):
 # computes features, and trains the DisagreeHead model
 def main(n: int, out_path: str):
     retriever, synthesizer = load_query_bundle(DOC_DIR)
+    retriever.similarity_top_k = 3
 
     X, y = [], []
     questions = list(iter_questions_from_files(DOC_DIR, limit=max(n, 200)))
@@ -84,7 +94,12 @@ def main(n: int, out_path: str):
         feats = feature_vector(final_answer, passages, alt_answers)
 
         # flags high disagreement when overlap is low or self-consistency variance is high
-        high_disagree = int(feats["overlap"] < 0.35 or feats["sc_var"] > 0.45)
+        high_disagree = int(
+            feats["overlap"] < 0.25 or
+            feats["sc_var"]  > 0.60 or
+            feats["entropy_proxy"] > 3.0
+        )
+
 
         X.append([feats["sc_var"], feats["overlap"], feats["entropy_proxy"]])
         y.append(high_disagree)
