@@ -5,3 +5,4 @@ Loading llama_index.core.storage.kvstore.simple_kvstore from data\index\index_st
 resource module not available on Windows
 C:\Users\chinm\Documents\disagreement-aware-RAG\app\.venv\Lib\site-packages\torch\nn\modules\module.py:1750: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `BertSdpaSelfAttention.forward`.
   return forward_call(*args, **kwargs)
+[train_head] processed 20/120
