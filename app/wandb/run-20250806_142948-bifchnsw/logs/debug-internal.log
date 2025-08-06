@@ -1,0 +1,12 @@
+{"time":"2025-08-06T14:29:48.689864+05:30","level":"INFO","msg":"stream: starting","core version":"0.21.0"}
+{"time":"2025-08-06T14:29:50.9044899+05:30","level":"INFO","msg":"stream: created new stream","id":"bifchnsw"}
+{"time":"2025-08-06T14:29:50.9044899+05:30","level":"INFO","msg":"stream: started","id":"bifchnsw"}
+{"time":"2025-08-06T14:29:50.9044899+05:30","level":"INFO","msg":"writer: Do: started","stream_id":"bifchnsw"}
+{"time":"2025-08-06T14:29:50.9044899+05:30","level":"INFO","msg":"sender: started","stream_id":"bifchnsw"}
+{"time":"2025-08-06T14:29:50.9044899+05:30","level":"INFO","msg":"handler: started","stream_id":"bifchnsw"}
+{"time":"2025-08-06T14:47:05.2818987+05:30","level":"INFO","msg":"stream: closing","id":"bifchnsw"}
+{"time":"2025-08-06T14:47:06.40171+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-06T14:47:06.9249742+05:30","level":"INFO","msg":"sender: closed","stream_id":"bifchnsw"}
+{"time":"2025-08-06T14:47:06.9266536+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":"bifchnsw"}
+{"time":"2025-08-06T14:47:06.926983+05:30","level":"INFO","msg":"handler: closed","stream_id":"bifchnsw"}
+{"time":"2025-08-06T14:47:06.926983+05:30","level":"INFO","msg":"stream: closed","id":"bifchnsw"}

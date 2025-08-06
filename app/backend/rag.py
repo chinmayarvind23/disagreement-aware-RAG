@@ -22,7 +22,14 @@ MODELS_DIR = Path("models")
 
 # Set embedding model for chunking, indexing and retrieving from vector store
 def _set_embeddings():
-    Settings.embed_model = HuggingFaceEmbedding("sentence-transformers/all-MiniLM-L6-v2", device="cuda" if faiss.get_num_gpus() > 0 else "cuda:0")
+    import torch
+    assert torch.cuda.is_available(), "CUDA not available; install CUDA PyTorch."
+    print("[RAG] embeddings device:", device)
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    Settings.embed_model = HuggingFaceEmbedding(
+        "sentence-transformers/all-MiniLM-L6-v2",
+        device=device,
+    )
 
 
 def _set_llm():

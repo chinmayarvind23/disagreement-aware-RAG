@@ -1,7 +1,7 @@
 {
   "os": "Windows-10-10.0.26100-SP0",
   "python": "CPython 3.11.13",
-  "startedAt": "2025-08-06T06:28:13.996338Z",
+  "startedAt": "2025-08-06T08:59:48.456506Z",
   "args": [
     "--n",
     "120"
@@ -9,7 +9,7 @@
   "program": "-m scripts.train_head",
   "git": {
     "remote": "https://github.com/chinmayarvind23/disagreement-aware-RAG.git",
-    "commit": "14c3320e269d17d90bc1c29a3040c231ab955b96"
+    "commit": "f1b562d6d43ec87e77923ed3512e2f28431e1b7b"
   },
   "email": "chinmayarvind23@gmail.com",
   "root": "C:\\Users\\chinm\\Documents\\disagreement-aware-RAG\\app",
@@ -22,7 +22,7 @@
   "disk": {
     "/": {
       "total": "996764807168",
-      "used": "276653375488"
+      "used": "273467850752"
     }
   },
   "memory": {
@@ -38,5 +38,5 @@
     }
   ],
   "cudaVersion": "12.9",
-  "writerId": "xyx26qmyackgo1nf2dadaq3k68hs6bg3"
+  "writerId": "5w1be8fszmsqqn7x2btq2kdkc40ypwoo"
 }

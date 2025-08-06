@@ -4,9 +4,11 @@ import numpy as np
 from rouge_score import rouge_scorer
 from sentence_transformers import SentenceTransformer, util as st_util
 from pathlib import Path
+import torch
+_DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 # Sentence encoder for similarity scoring of multiple answers from the LLM (do they agree with each other?)
-_embed = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+_embed = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2", device=_DEVICE)
 
 # ROUGE-L score to measure match between answer and evidence (is the answer supported by the sources?)
 _scorer = rouge_scorer.RougeScorer(["rougeL"], use_stemmer=True)
@@ -35,7 +37,10 @@ def _get_llama_entropy_model():
     if _llm_entropy is None and _LLAMA_PATH:
         _llm_entropy = Llama(
             model_path=_LLAMA_PATH,
-            logits_all=True,   # per-token logits
+            logits_all=True,
+            n_ctx=4096,
+            n_batch=256,
+            n_gpu_layers=-1,# per-token logits
             n_threads=8,
             verbose=False,
         )

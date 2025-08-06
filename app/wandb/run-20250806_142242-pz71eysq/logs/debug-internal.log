@@ -1,0 +1,17 @@
+{"time":"2025-08-06T14:22:42.7210903+05:30","level":"INFO","msg":"stream: starting","core version":"0.21.0"}
+{"time":"2025-08-06T14:22:44.9303818+05:30","level":"INFO","msg":"stream: created new stream","id":"pz71eysq"}
+{"time":"2025-08-06T14:22:44.9309167+05:30","level":"INFO","msg":"stream: started","id":"pz71eysq"}
+{"time":"2025-08-06T14:22:44.9309167+05:30","level":"INFO","msg":"writer: Do: started","stream_id":"pz71eysq"}
+{"time":"2025-08-06T14:22:44.9309167+05:30","level":"INFO","msg":"sender: started","stream_id":"pz71eysq"}
+{"time":"2025-08-06T14:22:44.9309167+05:30","level":"INFO","msg":"handler: started","stream_id":"pz71eysq"}
+{"time":"2025-08-06T14:22:45.2315561+05:30","level":"ERROR","msg":"HTTP error","status":403,"method":"POST","url":"https://api.wandb.ai/graphql"}
+{"time":"2025-08-06T14:22:45.2315561+05:30","level":"ERROR","msg":"runupserter: failed to init run","error":"returned error 403: {\"data\":{\"upsertBucket\":null},\"errors\":[{\"message\":\"permission denied\",\"path\":[\"upsertBucket\"],\"extensions\":{\"code\":\"PERMISSION_ERROR\"}}]}"}
+{"time":"2025-08-06T14:22:46.2366399+05:30","level":"INFO","msg":"stream: closing","id":"pz71eysq"}
+{"time":"2025-08-06T14:22:46.2388775+05:30","level":"ERROR","msg":"sender: uploadConfigFile: stream: no run"}
+{"time":"2025-08-06T14:22:46.5886328+05:30","level":"ERROR","msg":"HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/graphql"}
+{"time":"2025-08-06T14:22:46.5886328+05:30","level":"ERROR","msg":"runfiles: CreateRunFiles returned error: returned error 404: {\"data\":{\"createRunFiles\":null},\"errors\":[{\"message\":\"project chinmayarvind23/disagreement-rag-v2 not found during createRunFiles\",\"path\":[\"createRunFiles\"]}]}"}
+{"time":"2025-08-06T14:22:46.5886328+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-06T14:22:46.5886328+05:30","level":"INFO","msg":"handler: closed","stream_id":"pz71eysq"}
+{"time":"2025-08-06T14:22:46.5886328+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":"pz71eysq"}
+{"time":"2025-08-06T14:22:46.5886328+05:30","level":"INFO","msg":"sender: closed","stream_id":"pz71eysq"}
+{"time":"2025-08-06T14:22:46.5891502+05:30","level":"INFO","msg":"stream: closed","id":"pz71eysq"}

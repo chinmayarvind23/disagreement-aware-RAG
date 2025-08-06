@@ -1,8 +1,0 @@
-llama_context: n_ctx_per_seq (4096) < n_ctx_train (32768) -- the full capacity of the model will not be utilized
-llama_kv_cache_unified: LLAMA_SET_ROWS=0, using old ggml_cpy() method for backwards compatibility
-Loading llama_index.core.storage.kvstore.simple_kvstore from data\index\docstore.json.
-Loading llama_index.core.storage.kvstore.simple_kvstore from data\index\index_store.json.
-resource module not available on Windows
-C:\Users\chinm\Documents\disagreement-aware-RAG\app\.venv\Lib\site-packages\torch\nn\modules\module.py:1750: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `BertSdpaSelfAttention.forward`.
-  return forward_call(*args, **kwargs)
-[train_head] processed 20/120

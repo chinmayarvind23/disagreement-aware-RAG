@@ -1,0 +1,15 @@
+2025-08-06 14:22:42,489 INFO    MainThread:49604 [wandb_setup.py:_flush():80] Current SDK version is 0.21.0
+2025-08-06 14:22:42,489 INFO    MainThread:49604 [wandb_setup.py:_flush():80] Configure stats pid to 49604
+2025-08-06 14:22:42,489 INFO    MainThread:49604 [wandb_setup.py:_flush():80] Loading settings from C:\Users\chinm\.config\wandb\settings
+2025-08-06 14:22:42,489 INFO    MainThread:49604 [wandb_setup.py:_flush():80] Loading settings from C:\Users\chinm\Documents\disagreement-aware-RAG\app\wandb\settings
+2025-08-06 14:22:42,490 INFO    MainThread:49604 [wandb_setup.py:_flush():80] Loading settings from environment variables
+2025-08-06 14:22:42,490 INFO    MainThread:49604 [wandb_init.py:setup_run_log_directory():703] Logging user logs to C:\Users\chinm\Documents\disagreement-aware-RAG\app\wandb\run-20250806_142242-pz71eysq\logs\debug.log
+2025-08-06 14:22:42,491 INFO    MainThread:49604 [wandb_init.py:setup_run_log_directory():704] Logging internal logs to C:\Users\chinm\Documents\disagreement-aware-RAG\app\wandb\run-20250806_142242-pz71eysq\logs\debug-internal.log
+2025-08-06 14:22:42,491 INFO    MainThread:49604 [wandb_init.py:init():830] calling init triggers
+2025-08-06 14:22:42,491 INFO    MainThread:49604 [wandb_init.py:init():835] wandb.init called with sweep_config: {}
+config: {'_wandb': {}}
+2025-08-06 14:22:42,491 INFO    MainThread:49604 [wandb_init.py:init():871] starting backend
+2025-08-06 14:22:42,706 INFO    MainThread:49604 [wandb_init.py:init():874] sending inform_init request
+2025-08-06 14:22:42,719 INFO    MainThread:49604 [wandb_init.py:init():882] backend started and connected
+2025-08-06 14:22:42,720 INFO    MainThread:49604 [wandb_init.py:init():953] updated telemetry
+2025-08-06 14:22:43,180 INFO    MainThread:49604 [wandb_init.py:init():977] communicating run to backend with 90.0 second timeout
