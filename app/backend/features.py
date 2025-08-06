@@ -85,12 +85,37 @@ def self_consistency_variance(answers: list[str]) -> float:
     # Higher variance => lower mean similarity
     return float(1.0 - np.mean(sims))
 
-# Computing ROUGE-L overlap between answer and top-k passages of evidence (how well does the answer match the sources?)
-def evidence_overlap(answer: str, passages: list[str]) -> float:
-    # Concatenate top-k passages of evidence and compute ROUGE-L F-measure for answer
-    joined = "\n".join(passages)[:4000]
-    scores = _scorer.score(joined, answer)
-    return float(scores["rougeL"].fmeasure)
+# Computing ROUGE-L overlap between answer and retrieved passage of evidence (how well does the answer match the sources?)
+# alpha = weightage on ROUGE-L score, default is 0.65 (good and paraphrased matches)
+def evidence_overlap(answer: str, passages: list[str], alpha: float = 0.65) -> float:
+    if not passages:
+        return 0.0
+    
+    ans_txt = (answer or "")[:600]
+    if not ans_txt:
+        return 0.0
+    
+    ans_emb = _embed.encode([ans_txt], convert_to_tensor=True, normalize_embeddings=True)[0]
+    
+    best = 0.0
+    for p in passages:
+        if not p:
+            continue
+        txt = p[:1200]
+        
+        rouge_score = float(_scorer.score(txt, ans_txt)["rougeL"].fmeasure)
+        
+        p_emb =  _embed.encode([txt], convert_to_tensor=True, normalize_embeddings=True)[0]
+        cos = float(st_util.cos_sim(ans_emb, p_emb).cpu().numpy())
+        cos = max(-1.0, min(1.0, cos)) # [-1.1] range
+        sem = (cos + 1.0) / 2.0  # [0.0, 1.0] range
+        
+        blended_score = (alpha * rouge_score) + ((1 - alpha) * sem)
+        blended_score = min(1.0, max(0.0, 0.08 + 0.92 * blended_score))
+        if blended_score > best:
+            best = blended_score
+    
+    return float(best)
 
 # Create feature vector for classifier head for disagreement risk
 def feature_vector(answer: str, passages: list[str], samples: list[str]) -> dict:

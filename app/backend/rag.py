@@ -22,7 +22,7 @@ MODELS_DIR = Path("models")
 
 # Set embedding model for chunking, indexing and retrieving from vector store
 def _set_embeddings():
-    Settings.embed_model = HuggingFaceEmbedding("sentence-transformers/all-MiniLM-L6-v2")
+    Settings.embed_model = HuggingFaceEmbedding("sentence-transformers/all-MiniLM-L6-v2", device="cuda" if faiss.get_num_gpus() > 0 else "cuda:0")
 
 
 def _set_llm():
@@ -39,6 +39,7 @@ def _set_llm():
             model_kwargs={
                 "n_threads": os.cpu_count() or 8,
                 "n_ctx": 4096,
+                "n_gpu_layers": -1,
             },
             verbose=False,
         )

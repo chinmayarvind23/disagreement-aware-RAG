@@ -7,6 +7,7 @@ from backend.disagreement import DisagreeHead
 from llama_index.core.response_synthesizers import get_response_synthesizer
 from llama_index.core.retrievers import BaseRetriever
 from llama_index.core import Settings
+import wandb
 
 DATA_DIR = Path("data")
 MODEL_OUT = DATA_DIR / "disagree_head.joblib"
@@ -74,6 +75,15 @@ def _sample_answers(q: str, retriever: BaseRetriever, base_synth, n=3):
 # It loads the retriever and synthesizer, samples answers for questions,
 # computes features, and trains the DisagreeHead model
 def main(n: int, out_path: str):
+    wandb.init(project="disagreement-aware-rag", name=f"proxy-n{n}")
+    wandb.config.update({
+        "n": n,
+        "train_overlap_label_cut": 0.4,
+        "train_scvar_label_cut": 0.7,
+        "train_entropy_label_cut": 4.2,
+        "alpha_blend": 0.65
+    })
+
     retriever, synthesizer = load_query_bundle(DOC_DIR)
     retriever.similarity_top_k = 3
 
@@ -95,9 +105,9 @@ def main(n: int, out_path: str):
 
         # flags high disagreement when overlap is low or self-consistency variance is high
         high_disagree = int(
-            feats["overlap"] < 0.15 or
-            feats["sc_var"]  > 0.75 or
-            feats["entropy_proxy"] > 3.8
+            feats["overlap"] < 0.4 or
+            feats["sc_var"]  > 0.7 or
+            feats["entropy_proxy"] > 4.2
         )
 
 
@@ -110,11 +120,20 @@ def main(n: int, out_path: str):
     X = np.asarray(X, dtype=float)
     y = np.asarray(y, dtype=int)
 
+    wandb.log({
+    "proxy_positive_rate": float(y.mean())
+    })
+    
     head = DisagreeHead()
     head.fit(X, y)
     head.save(out_path)
     print(f"[train_head] saved model to {out_path}")
     print(f"[train_head] proxy positives: {y.mean():.2f}")
+    wandb.log({
+    "feat_overlap": float(feats["overlap"]),
+    "feat_sc_var": float(feats["sc_var"]),
+    "feat_entropy": float(feats["entropy_proxy"])})
+    wandb.finish()
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
