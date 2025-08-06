@@ -95,9 +95,9 @@ def main(n: int, out_path: str):
 
         # flags high disagreement when overlap is low or self-consistency variance is high
         high_disagree = int(
-            feats["overlap"] < 0.25 or
-            feats["sc_var"]  > 0.60 or
-            feats["entropy_proxy"] > 3.0
+            feats["overlap"] < 0.15 or
+            feats["sc_var"]  > 0.75 or
+            feats["entropy_proxy"] > 3.8
         )
 
 
