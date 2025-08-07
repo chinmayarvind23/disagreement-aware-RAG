@@ -56,7 +56,7 @@ for p in picked:
         pdis, feats,
         tau=head.threshold,
         min_overlap=0.5,
-        max_sc=0.7
+        max_sc=0.3
     )
 
     print(json.dumps({
