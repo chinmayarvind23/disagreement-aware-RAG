@@ -4,6 +4,9 @@ from typing import List, Dict
 from backend.rag import load_query_bundle, answer_query, DOC_DIR
 from backend.features import feature_vector
 from backend.disagreement import DisagreeHead, decision_from_feats
+import csv
+import numpy as np
+from sklearn.metrics import roc_auc_score
 
 app = FastAPI(title="Disagreement-Aware RAG")
 
@@ -58,3 +61,23 @@ def qa(req: QARequest):
         },
         decision=decision,
     )
+
+@app.get("/metrics")
+def metrics():
+    curve = []
+    with open("data/coverage_curve.tsv", newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f, delimiter="\t")
+        for row in reader:
+            curve.append({
+                "tau": float(row["tau"]),
+                "coverage": float(row["coverage"]),
+                "halluc_rate": float(row["halluc_rate"])
+            })
+
+    data = np.load("data/test_preds.npz")
+    auc = float(roc_auc_score(data["y_true"], data["y_score"]))
+
+    return {
+        "coverage_curve": curve,
+        "roc_auc": auc
+    }

@@ -1,0 +1,82 @@
+_wandb:
+    value:
+        cli_version: 0.21.0
+        e:
+            lcssvoesxihybpy7e7cl6be2wyclwary:
+                args:
+                    - --n
+                    - "60"
+                cpu_count: 16
+                cpu_count_logical: 22
+                cudaVersion: "13.0"
+                disk:
+                    /:
+                        total: "996764807168"
+                        used: "273796370432"
+                email: chinmayarvind23@gmail.com
+                executable: C:\Users\chinm\Documents\disagreement-aware-RAG\app\.venv\Scripts\python.exe
+                git:
+                    commit: 22231183de2084d43d2bc934417099fffed82415
+                    remote: https://github.com/chinmayarvind23/disagreement-aware-RAG.git
+                gpu: NVIDIA GeForce RTX 4070 Laptop GPU
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 4608
+                      memoryTotal: "8585740288"
+                      name: NVIDIA GeForce RTX 4070 Laptop GPU
+                      uuid: GPU-71e4dc92-f6e0-64a6-0bd5-93baa30c0f59
+                host: MAIN_LAPTOP
+                memory:
+                    total: "33844576256"
+                os: Windows-10-10.0.26100-SP0
+                program: -m scripts.train_head
+                python: CPython 3.11.13
+                root: C:\Users\chinm\Documents\disagreement-aware-RAG\app
+                startedAt: "2025-08-08T19:26:56.323370Z"
+                writerId: lcssvoesxihybpy7e7cl6be2wyclwary
+        m: []
+        python_version: 3.11.13
+        t:
+            "1":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 51
+                - 53
+                - 71
+                - 75
+                - 87
+            "2":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 51
+                - 53
+                - 71
+                - 75
+                - 87
+            "3":
+                - 2
+                - 13
+            "4": 3.11.13
+            "5": 0.21.0
+            "6": 4.55.0
+            "8":
+                - 3
+            "12": 0.21.0
+            "13": windows-amd64
+alpha_blend:
+    value: 0.65
+"n":
+    value: 60
+train_entropy_label_cut:
+    value: 4.2
+train_overlap_label_cut:
+    value: 0.45
+train_scvar_label_cut:
+    value: 0.2

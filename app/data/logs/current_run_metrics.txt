@@ -1,0 +1,15 @@
+Run 1:
+{
+  "_timestamp": 1754685861.5769646,
+  "_step": 1,
+  "feat_overlap": 0.4783772307634354,
+  "feat_sc_var": 0.011765797932942745,
+  "feat_entropy": 0.26976579793294275,
+  "_wandb": {
+    "runtime": 4642
+  },
+  "_runtime": 4642,
+  "proxy_positive_rate": 0.26666666666666666
+}
+
+Run 2:

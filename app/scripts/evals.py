@@ -41,7 +41,7 @@ def main():
     from llama_index.core.response_synthesizers import get_response_synthesizer
     synthesizer = get_response_synthesizer(response_mode="compact")
     head = DisagreeHead.load("data/disagree_head.joblib")
-    Q = list(iter_questions(DOC_DIR, limit=30))
+    Q = list(iter_questions(root="data/test", limit=30))
     rows = []
     for i, q in enumerate(Q, 1):
         nodes = retriever.retrieve(q)
@@ -59,7 +59,15 @@ def main():
         })
         if i % 2 == 0:
             print(f"[evals] {i}/{len(Q)}")
-
+    y_true = np.array([
+        int(
+            (r["overlap"] < 0.45)
+            or (r["sc_var"] > 0.2)
+            or (r["entropy_proxy"] > 1.5)
+        ) for r in rows
+            ])
+    y_score = np.array([r["p_dis"] for r in rows])
+    np.savez("data/test_preds.npz", y_true=y_true, y_score=y_score)
     taus = [round(x, 2) for x in np.linspace(0.1, 0.8, 15)]
     results = []
     halluc_threshold = 0.5
@@ -71,7 +79,7 @@ def main():
                 answered += 1
                 entail_probs = []
                 for prem in r["passages"]:
-                    scores = nli(prem, r["resp_text"])
+                    scores = nli((prem, r["resp_text"]))
                     ent_score = next(item["score"]
                                      for item in scores
                                      if item["label"] == "ENTAILMENT")

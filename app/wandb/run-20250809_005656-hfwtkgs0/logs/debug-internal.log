@@ -4,3 +4,10 @@
 {"time":"2025-08-09T00:56:58.7030745+05:30","level":"INFO","msg":"writer: Do: started","stream_id":"hfwtkgs0"}
 {"time":"2025-08-09T00:56:58.7036054+05:30","level":"INFO","msg":"sender: started","stream_id":"hfwtkgs0"}
 {"time":"2025-08-09T00:56:58.7036054+05:30","level":"INFO","msg":"handler: started","stream_id":"hfwtkgs0"}
+{"time":"2025-08-09T02:14:22.6003368+05:30","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.6748375,"progress":"605B/605B"},{"desc":"uploading config.yaml","runtime_seconds":0.3380844,"progress":"2.4KB/2.4KB"}],"total_operations":2}}
+{"time":"2025-08-09T02:14:23.3106739+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-09T02:14:23.6661753+05:30","level":"INFO","msg":"stream: closing","id":"hfwtkgs0"}
+{"time":"2025-08-09T02:14:23.6661753+05:30","level":"INFO","msg":"handler: closed","stream_id":"hfwtkgs0"}
+{"time":"2025-08-09T02:14:23.6661753+05:30","level":"INFO","msg":"sender: closed","stream_id":"hfwtkgs0"}
+{"time":"2025-08-09T02:14:23.6661753+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":"hfwtkgs0"}
+{"time":"2025-08-09T02:14:23.6661753+05:30","level":"INFO","msg":"stream: closed","id":"hfwtkgs0"}

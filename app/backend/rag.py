@@ -17,7 +17,7 @@ from llama_index.core.retrievers import QueryFusionRetriever
 
 DATA_DIR = Path("data")
 INDEX_DIR = DATA_DIR / "index"
-DOC_DIR = "data/raw"
+DOC_DIR = "data"
 MODELS_DIR = Path("models")
 
 # Set embedding model for chunking, indexing and retrieving from vector store
