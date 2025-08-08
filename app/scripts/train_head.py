@@ -52,7 +52,7 @@ def _answer_once(q: str, retriever: BaseRetriever, synthesizer):
     return str(resp), passages, nodes
 
 # Sample answers for a question using the retriever and synthesizer
-# This function tries to get different phrasings of the answer by varying the temperature   
+# This function tries to get different phrasings of the answer by varying the temperature
 def _sample_answers(q: str, retriever: BaseRetriever, _, n=3):
     nodes = retriever.retrieve(q)
     passages = _nodes_to_passages(nodes)
@@ -70,10 +70,10 @@ def _sample_answers(q: str, retriever: BaseRetriever, _, n=3):
 # It loads the retriever and synthesizer, samples answers for questions,
 # computes features, and trains the DisagreeHead model
 def main(n: int, out_path: str):
-    wandb.init(project="disagreement-rag-v2", entity="chinmayarvind23-student", name=f"training-n{n}")
+    wandb.init(project="disagreement-rag-v2", entity="chinmayarvind23-student", name=f"training-n{n}-2")
     wandb.config.update({
         "n": n,
-        "train_overlap_label_cut": 0.6,
+        "train_overlap_label_cut": 0.45,
         "train_scvar_label_cut": 0.2,
         "train_entropy_label_cut": 4.2,
         "alpha_blend": 0.65
@@ -100,7 +100,7 @@ def main(n: int, out_path: str):
 
         # flags high disagreement when overlap is low or self-consistency variance is high
         high_disagree = int(
-            feats["overlap"] < 0.6 or
+            feats["overlap"] < 0.45 or
             feats["sc_var"]  > 0.2 or
             feats["entropy_proxy"] > 1.5
         )

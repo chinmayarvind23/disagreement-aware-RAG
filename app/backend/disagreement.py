@@ -63,7 +63,7 @@ class DisagreeHead:
 
 # Answer ONLY if predicted disagreement is low, overlap between answer and evidence is good, and self-consistency is high
 def decision_from_feats(p_disagree: float, feats: dict,
-                        tau=0.3, min_overlap=0.6, max_sc=0.2):
+                        tau=0.3, min_overlap=0.45, max_sc=0.2):
     if p_disagree < tau and feats["overlap"] >= min_overlap and feats["sc_var"] <= max_sc:
         return "answer"
     return "abstain"
