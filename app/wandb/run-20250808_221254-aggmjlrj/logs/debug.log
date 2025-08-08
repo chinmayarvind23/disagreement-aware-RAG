@@ -14,3 +14,9 @@ config: {'_wandb': {}}
 2025-08-08 22:12:54,622 INFO    MainThread:15256 [wandb_init.py:init():953] updated telemetry
 2025-08-08 22:12:55,017 INFO    MainThread:15256 [wandb_init.py:init():977] communicating run to backend with 90.0 second timeout
 2025-08-08 22:12:55,432 INFO    MainThread:15256 [wandb_init.py:init():1029] starting run threads in backend
+2025-08-08 22:12:57,978 INFO    MainThread:15256 [wandb_run.py:_console_start():2458] atexit reg
+2025-08-08 22:12:57,978 INFO    MainThread:15256 [wandb_run.py:_redirect():2306] redirect: wrap_raw
+2025-08-08 22:12:57,978 INFO    MainThread:15256 [wandb_run.py:_redirect():2375] Wrapping output streams.
+2025-08-08 22:12:57,978 INFO    MainThread:15256 [wandb_run.py:_redirect():2398] Redirects installed.
+2025-08-08 22:12:57,982 INFO    MainThread:15256 [wandb_init.py:init():1075] run started, returning control to user process
+2025-08-08 22:12:57,982 INFO    MainThread:15256 [wandb_run.py:_config_callback():1363] config_cb None None {'n': 60, 'train_overlap_label_cut': 0.45, 'train_scvar_label_cut': 0.2, 'train_entropy_label_cut': 4.2, 'alpha_blend': 0.65}
