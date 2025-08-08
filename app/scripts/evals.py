@@ -3,11 +3,12 @@ from pathlib import Path
 from backend.rag import load_query_bundle, DOC_DIR
 from backend.features import feature_vector
 from backend.disagreement import DisagreeHead, decision_from_feats
+from transformers import pipeline
 
 CURVE_OUT = Path("data/coverage_curve.tsv")
 
 # Gives the question text from text files
-def iter_questions(root="data/raw", limit=30):
+def iter_questions(root="data/test", limit=30):
     q_pat = re.compile(r"^Question:\s*(.+)$", re.I)
     n = 0
     for p in Path(root).glob("*.txt"):
@@ -22,6 +23,15 @@ def iter_questions(root="data/raw", limit=30):
                 n += 1
                 if n >= limit:
                     return
+
+# Creating a text classification pipeline for NLI
+# This is used to classify the agreement/disagreement of the answer with the evidence
+nli = pipeline(
+    "text-classification",
+    model="facebook/bart-large-mnli",
+    return_all_scores=True,
+    device=0
+)
 
 # Main function to evaluate the disagreement head
 # It loads the retriever and synthesizer, collects features on a fixed set of questions,
@@ -40,34 +50,54 @@ def main():
         feats = feature_vector(str(resp), passages, [str(resp)])
 
         p_dis = head.predict_proba(feats)
-        rows.append({"q": q, "p_dis": p_dis, **feats})
-        if i % 20 == 0:
+        rows.append({
+            "q": q,
+            "p_dis": p_dis,
+            "resp_text": resp,
+            "passages": passages,
+            **feats
+        })
+        if i % 2 == 0:
             print(f"[evals] {i}/{len(Q)}")
 
     taus = [round(x, 2) for x in np.linspace(0.1, 0.8, 15)]
-    out = []
+    results = []
+    halluc_threshold = 0.5
     for tau in taus:
         answered, errs = 0, 0
         for r in rows:
             decision = decision_from_feats(r["p_dis"], r, tau=tau)
             if decision == "answer":
                 answered += 1
-                # hallucination proxy: low overlap -> error
-                errs += int(r["overlap"] < 0.35)
+                entail_probs = []
+                for prem in r["passages"]:
+                    scores = nli(prem, r["resp_text"])
+                    ent_score = next(item["score"]
+                                     for item in scores
+                                     if item["label"] == "ENTAILMENT")
+                    entail_probs.append(ent_score)
+                mean_ent = sum(entail_probs) / len(entail_probs) if entail_probs else 0.0
+                errs += int(mean_ent < halluc_threshold)
+
         cov = answered / max(1, len(rows))
         err_rate = (errs / answered) if answered else 0.0
-        out.append({"tau": tau, "coverage": round(cov, 3), "halluc_rate": round(err_rate, 3)})
+        results.append({
+            "tau": tau,
+            "coverage": round(cov, 3),
+            "halluc_rate": round(err_rate, 3)
+        })
 
     CURVE_OUT.parent.mkdir(parents=True, exist_ok=True)
     with CURVE_OUT.open("w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=["tau", "coverage", "halluc_rate"], delimiter="\t")
         w.writeheader()
-        w.writerows(out)
+        w.writerows(results)
 
     print("\ncoverage vs hallucination-rate")
-    for r in out:
+    for r in results:
         print(f"tau={r['tau']:.2f}  coverage={r['coverage']:.2f}  halluc_rate={r['halluc_rate']:.2f}")
     print(f"\n[wrote] {CURVE_OUT}")
+
 
 if __name__ == "__main__":
     main()

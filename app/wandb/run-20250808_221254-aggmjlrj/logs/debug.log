@@ -20,3 +20,10 @@ config: {'_wandb': {}}
 2025-08-08 22:12:57,978 INFO    MainThread:15256 [wandb_run.py:_redirect():2398] Redirects installed.
 2025-08-08 22:12:57,982 INFO    MainThread:15256 [wandb_init.py:init():1075] run started, returning control to user process
 2025-08-08 22:12:57,982 INFO    MainThread:15256 [wandb_run.py:_config_callback():1363] config_cb None None {'n': 60, 'train_overlap_label_cut': 0.45, 'train_scvar_label_cut': 0.2, 'train_entropy_label_cut': 4.2, 'alpha_blend': 0.65}
+2025-08-08 23:20:32,439 INFO    MainThread:15256 [wandb_run.py:_finish():2224] finishing run chinmayarvind23-student/disagreement-rag-v2/aggmjlrj
+2025-08-08 23:20:32,440 INFO    MainThread:15256 [wandb_run.py:_atexit_cleanup():2423] got exitcode: 0
+2025-08-08 23:20:32,440 INFO    MainThread:15256 [wandb_run.py:_restore():2405] restore
+2025-08-08 23:20:32,441 INFO    MainThread:15256 [wandb_run.py:_restore():2411] restore done
+2025-08-08 23:20:33,799 INFO    MainThread:15256 [wandb_run.py:_footer_history_summary_info():3903] rendering history
+2025-08-08 23:20:33,799 INFO    MainThread:15256 [wandb_run.py:_footer_history_summary_info():3935] rendering summary
+2025-08-08 23:20:33,800 INFO    MainThread:15256 [wandb_run.py:_footer_sync_info():3864] logging synced files

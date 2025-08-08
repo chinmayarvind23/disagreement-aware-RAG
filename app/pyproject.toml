@@ -8,7 +8,7 @@ authors = [
 package-mode = false
 license = {text = "MIT"}
 readme = "README.md"
-requires-python = ">=3.11,<4.0"
+requires-python = ">=3.11,<3.14"
 dependencies = [
     "pandas (==2.2.2)",
     "llama-index (>=0.13.0,<0.14.0)",
@@ -36,6 +36,7 @@ dependencies = [
     "make (>=0.1.6.post2,<0.2.0)",
     "wheel (>=0.45.1,<0.46.0)",
     "mlflow (>=3.2.0,<4.0.0)",
+    "torch (>=2.8.0,<3.0.0)",
 ]
 
 

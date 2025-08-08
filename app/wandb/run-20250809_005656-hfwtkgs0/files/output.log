@@ -3,8 +3,3 @@ llama_kv_cache_unified: LLAMA_SET_ROWS=0, using old ggml_cpy() method for backwa
 Loading llama_index.core.storage.kvstore.simple_kvstore from data\index\docstore.json.
 Loading llama_index.core.storage.kvstore.simple_kvstore from data\index\index_store.json.
 resource module not available on Windows
-[train_head] processed 20/60
-[train_head] processed 40/60
-[train_head] processed 60/60
-[train_head] saved model to data\disagree_head.joblib
-[train_head] proxy positives: 0.18

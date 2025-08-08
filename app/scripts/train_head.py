@@ -13,7 +13,7 @@ DATA_DIR = Path("data")
 MODEL_OUT = DATA_DIR / "disagree_head.joblib"
 
 # Gives the question text and file path of question in text files
-def iter_questions_from_files(root="data/raw", limit=300):
+def iter_questions_from_files(root="data/train", limit=300):
     q_pat = re.compile(r"^Question:\s*(.+)$", re.I)
     n = 0
     for p in Path(root).glob("*.txt"):
@@ -79,13 +79,15 @@ def main(n: int, out_path: str):
         "alpha_blend": 0.65
     })
 
-    retriever, synthesizer = load_query_bundle(DOC_DIR)
+    from pathlib import Path
+    TRAIN_DIR = Path("data") / "train"
+    retriever, synthesizer = load_query_bundle(TRAIN_DIR)
     retriever.similarity_top_k = 3
 
     X, y = [], []
-    questions = list(iter_questions_from_files(DOC_DIR, limit=max(n, 200)))
+    questions = list(iter_questions_from_files(root="data/train", limit=max(n, 200)))
     if not questions:
-        raise SystemExit("No questions found in data/raw/*.txt. Please add some.")
+        raise SystemExit("No questions found in data/train/*.txt. Please add some.")
 
     random.shuffle(questions)
     questions = questions[:n]

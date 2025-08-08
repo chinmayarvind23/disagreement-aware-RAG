@@ -1,0 +1,16 @@
+llama_context: n_ctx_per_seq (4096) < n_ctx_train (32768) -- the full capacity of the model will not be utilized
+llama_kv_cache_unified: LLAMA_SET_ROWS=0, using old ggml_cpy() method for backwards compatibility
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\scripts\train_head.py", line 139, in <module>
+    main(args.n, args.out)
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\scripts\train_head.py", line 82, in main
+    retriever, synthesizer = load_query_bundle(DOC_DIR)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\backend\rag.py", line 107, in load_query_bundle
+    docs = SimpleDirectoryReader(doc_dir).load_data()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\.venv\Lib\site-packages\llama_index\core\readers\file\base.py", line 295, in __init__
+    raise ValueError(f"Directory {input_dir} does not exist.")
+ValueError: Directory data/raw does not exist.
