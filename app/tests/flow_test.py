@@ -5,7 +5,7 @@ from backend.disagreement import DisagreeHead, decision_from_feats
 from llama_index.core import Settings
 from llama_index.core.response_synthesizers import get_response_synthesizer
 
-def sample_answers(q, retriever, base_synth, n=3, k_passages=3):
+def sample_answers(q, retriever, _, n=3, k_passages=3):
     # get nodes
     nodes = retriever.retrieve(q)
     passages = [n.get_text()[:900] for n in nodes[:k_passages]]
@@ -15,9 +15,10 @@ def sample_answers(q, retriever, base_synth, n=3, k_passages=3):
     old_temp = getattr(Settings.llm, "temperature", None)
     try:
         for t in temps:
+            synth_t = get_response_synthesizer(response_mode="compact")
             if hasattr(Settings.llm, "temperature"):
                 Settings.llm.temperature = t
-            resp = base_synth.synthesize(q, nodes)
+            resp = synth_t.synthesize(q, nodes)
             outs.append(str(resp))
     finally:
         if old_temp is not None and hasattr(Settings.llm, "temperature"):
@@ -55,8 +56,8 @@ for p in picked:
     decision = decision_from_feats(
         pdis, feats,
         tau=head.threshold,
-        min_overlap=0.5,
-        max_sc=0.3
+        min_overlap=0.6,
+        max_sc=0.2
     )
 
     print(json.dumps({
