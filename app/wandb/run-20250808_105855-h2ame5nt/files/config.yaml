@@ -2,21 +2,21 @@ _wandb:
     value:
         cli_version: 0.21.0
         e:
-            5w1be8fszmsqqn7x2btq2kdkc40ypwoo:
+            4i976lwffdflcnxcpusm81k4r96dcfz1:
                 args:
                     - --n
-                    - "120"
+                    - "60"
                 cpu_count: 16
                 cpu_count_logical: 22
-                cudaVersion: "12.9"
+                cudaVersion: "13.0"
                 disk:
                     /:
                         total: "996764807168"
-                        used: "273467850752"
+                        used: "271415885824"
                 email: chinmayarvind23@gmail.com
                 executable: C:\Users\chinm\Documents\disagreement-aware-RAG\app\.venv\Scripts\python.exe
                 git:
-                    commit: f1b562d6d43ec87e77923ed3512e2f28431e1b7b
+                    commit: ac2414464a9afe5d099b161d546504fd22adff88
                     remote: https://github.com/chinmayarvind23/disagreement-aware-RAG.git
                 gpu: NVIDIA GeForce RTX 4070 Laptop GPU
                 gpu_count: 1
@@ -33,8 +33,8 @@ _wandb:
                 program: -m scripts.train_head
                 python: CPython 3.11.13
                 root: C:\Users\chinm\Documents\disagreement-aware-RAG\app
-                startedAt: "2025-08-06T08:59:48.456506Z"
-                writerId: 5w1be8fszmsqqn7x2btq2kdkc40ypwoo
+                startedAt: "2025-08-08T05:28:55.940645Z"
+                writerId: 4i976lwffdflcnxcpusm81k4r96dcfz1
         m: []
         python_version: 3.11.13
         t:
@@ -42,25 +42,30 @@ _wandb:
                 - 1
                 - 5
                 - 11
+                - 41
                 - 49
                 - 51
                 - 53
+                - 71
                 - 75
                 - 87
             "2":
                 - 1
                 - 5
                 - 11
+                - 41
                 - 49
                 - 51
                 - 53
+                - 71
                 - 75
                 - 87
             "3":
+                - 2
                 - 13
             "4": 3.11.13
             "5": 0.21.0
-            "6": 4.54.1
+            "6": 4.55.0
             "8":
                 - 3
             "12": 0.21.0
@@ -68,10 +73,10 @@ _wandb:
 alpha_blend:
     value: 0.65
 "n":
-    value: 120
+    value: 60
 train_entropy_label_cut:
-    value: 1.5
+    value: 4.2
 train_overlap_label_cut:
-    value: 0.5
+    value: 0.4
 train_scvar_label_cut:
-    value: 0.2
+    value: 0.7

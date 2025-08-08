@@ -1,0 +1,78 @@
+llama_context: n_ctx_per_seq (4096) < n_ctx_train (32768) -- the full capacity of the model will not be utilized
+llama_kv_cache_unified: LLAMA_SET_ROWS=0, using old ggml_cpy() method for backwards compatibility
+Loading llama_index.core.storage.kvstore.simple_kvstore from data\index\docstore.json.
+Loading llama_index.core.storage.kvstore.simple_kvstore from data\index\index_store.json.
+resource module not available on Windows
+[train_head] processed 20/120
+[train_head] processed 40/120
+[train_head] processed 60/120
+[train_head] processed 80/120
+[train_head] processed 100/120
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\scripts\train_head.py", line 144, in <module>
+    main(args.n, args.out)
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\scripts\train_head.py", line 99, in main
+    samples = _sample_answers(q, retriever, synthesizer, n=3)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\scripts\train_head.py", line 66, in _sample_answers
+    resp = base_synth.synthesize(q, nodes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\.venv\Lib\site-packages\llama_index_instrumentation\dispatcher.py", line 317, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\.venv\Lib\site-packages\llama_index\core\response_synthesizers\base.py", line 235, in synthesize
+    response_str = self.get_response(
+                   ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\.venv\Lib\site-packages\llama_index_instrumentation\dispatcher.py", line 317, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\.venv\Lib\site-packages\llama_index\core\response_synthesizers\compact_and_refine.py", line 43, in get_response
+    return super().get_response(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\.venv\Lib\site-packages\llama_index_instrumentation\dispatcher.py", line 317, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\.venv\Lib\site-packages\llama_index\core\response_synthesizers\refine.py", line 179, in get_response
+    response = self._give_response_single(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\.venv\Lib\site-packages\llama_index\core\response_synthesizers\refine.py", line 241, in _give_response_single
+    program(
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\.venv\Lib\site-packages\llama_index_instrumentation\dispatcher.py", line 317, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\.venv\Lib\site-packages\llama_index\core\response_synthesizers\refine.py", line 85, in __call__
+    answer = self._llm.predict(
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\.venv\Lib\site-packages\llama_index_instrumentation\dispatcher.py", line 317, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\.venv\Lib\site-packages\llama_index\core\llms\llm.py", line 627, in predict
+    response = self.complete(formatted_prompt, formatted=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\.venv\Lib\site-packages\llama_index_instrumentation\dispatcher.py", line 317, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\.venv\Lib\site-packages\llama_index\core\llms\callbacks.py", line 435, in wrapped_llm_predict
+    f_return_val = f(_self, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\.venv\Lib\site-packages\llama_index\llms\llama_cpp\base.py", line 279, in complete
+    response = self._model(prompt=prompt, **self.generate_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\.venv\Lib\site-packages\llama_cpp\llama.py", line 1904, in __call__
+    return self.create_completion(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\.venv\Lib\site-packages\llama_cpp\llama.py", line 1837, in create_completion
+    completion: Completion = next(completion_or_chunks)  # type: ignore
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\.venv\Lib\site-packages\llama_cpp\llama.py", line 1322, in _create_completion
+    for token in self.generate(
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\.venv\Lib\site-packages\llama_cpp\llama.py", line 914, in generate
+    self.eval(tokens)
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\.venv\Lib\site-packages\llama_cpp\llama.py", line 648, in eval
+    self._ctx.decode(self._batch)
+  File "C:\Users\chinm\Documents\disagreement-aware-RAG\app\.venv\Lib\site-packages\llama_cpp\_internals.py", line 316, in decode
+    return_code = llama_cpp.llama_decode(
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

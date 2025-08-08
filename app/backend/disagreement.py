@@ -6,7 +6,7 @@ from sklearn.linear_model import LogisticRegression
 class DisagreeHead:
     def __init__(self):
         self.model = None
-        self.threshold = 0.4  # abstainance threshold, when p_disagree < threshold, we answer
+        self.threshold = 0.3  # abstainance threshold, when p_disagree < threshold, we answer
 
     # Fit the logistic regression model on features and labels
     def fit(self, X: np.ndarray, y: np.ndarray):
@@ -28,11 +28,11 @@ class DisagreeHead:
         obj = joblib.load(path)
         h = cls()
         h.model = obj["model"]
-        h.threshold = obj.get("threshold", 0.4)
+        h.threshold = obj.get("threshold", 0.3)
         return h
 
-def decision_from_feats(p_disagree: float, feats: dict, tau=0.4, min_overlap=0.5, max_sc=0.3):
-    # Answer ONLY if predicted disagreement is low, overlap between answer and evidence is decent, and self-consistency is high
+def decision_from_feats(p_disagree: float, feats: dict, tau=0.3, min_overlap=0.6, max_sc=0.2):
+    # Answer ONLY if predicted disagreement is low, overlap between answer and evidence is good, and self-consistency is high
     if p_disagree < tau and feats["overlap"] >= min_overlap and feats["sc_var"] <= max_sc:
         return "answer"
     return "abstain"

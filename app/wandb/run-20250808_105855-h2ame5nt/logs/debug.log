@@ -1,0 +1,29 @@
+2025-08-08 10:58:55,946 INFO    MainThread:39892 [wandb_setup.py:_flush():80] Current SDK version is 0.21.0
+2025-08-08 10:58:55,946 INFO    MainThread:39892 [wandb_setup.py:_flush():80] Configure stats pid to 39892
+2025-08-08 10:58:55,946 INFO    MainThread:39892 [wandb_setup.py:_flush():80] Loading settings from C:\Users\chinm\.config\wandb\settings
+2025-08-08 10:58:55,946 INFO    MainThread:39892 [wandb_setup.py:_flush():80] Loading settings from C:\Users\chinm\Documents\disagreement-aware-RAG\app\wandb\settings
+2025-08-08 10:58:55,946 INFO    MainThread:39892 [wandb_setup.py:_flush():80] Loading settings from environment variables
+2025-08-08 10:58:55,947 INFO    MainThread:39892 [wandb_init.py:setup_run_log_directory():703] Logging user logs to C:\Users\chinm\Documents\disagreement-aware-RAG\app\wandb\run-20250808_105855-h2ame5nt\logs\debug.log
+2025-08-08 10:58:55,948 INFO    MainThread:39892 [wandb_init.py:setup_run_log_directory():704] Logging internal logs to C:\Users\chinm\Documents\disagreement-aware-RAG\app\wandb\run-20250808_105855-h2ame5nt\logs\debug-internal.log
+2025-08-08 10:58:55,948 INFO    MainThread:39892 [wandb_init.py:init():830] calling init triggers
+2025-08-08 10:58:55,948 INFO    MainThread:39892 [wandb_init.py:init():835] wandb.init called with sweep_config: {}
+config: {'_wandb': {}}
+2025-08-08 10:58:55,948 INFO    MainThread:39892 [wandb_init.py:init():871] starting backend
+2025-08-08 10:58:56,170 INFO    MainThread:39892 [wandb_init.py:init():874] sending inform_init request
+2025-08-08 10:58:56,188 INFO    MainThread:39892 [wandb_init.py:init():882] backend started and connected
+2025-08-08 10:58:56,189 INFO    MainThread:39892 [wandb_init.py:init():953] updated telemetry
+2025-08-08 10:58:56,613 INFO    MainThread:39892 [wandb_init.py:init():977] communicating run to backend with 90.0 second timeout
+2025-08-08 10:58:56,993 INFO    MainThread:39892 [wandb_init.py:init():1029] starting run threads in backend
+2025-08-08 10:58:59,402 INFO    MainThread:39892 [wandb_run.py:_console_start():2458] atexit reg
+2025-08-08 10:58:59,402 INFO    MainThread:39892 [wandb_run.py:_redirect():2306] redirect: wrap_raw
+2025-08-08 10:58:59,402 INFO    MainThread:39892 [wandb_run.py:_redirect():2375] Wrapping output streams.
+2025-08-08 10:58:59,402 INFO    MainThread:39892 [wandb_run.py:_redirect():2398] Redirects installed.
+2025-08-08 10:58:59,405 INFO    MainThread:39892 [wandb_init.py:init():1075] run started, returning control to user process
+2025-08-08 10:58:59,405 INFO    MainThread:39892 [wandb_run.py:_config_callback():1363] config_cb None None {'n': 60, 'train_overlap_label_cut': 0.4, 'train_scvar_label_cut': 0.7, 'train_entropy_label_cut': 4.2, 'alpha_blend': 0.65}
+2025-08-08 12:43:06,713 INFO    MainThread:39892 [wandb_run.py:_finish():2224] finishing run chinmayarvind23-student/disagreement-rag-v2/h2ame5nt
+2025-08-08 12:43:06,714 INFO    MainThread:39892 [wandb_run.py:_atexit_cleanup():2423] got exitcode: 0
+2025-08-08 12:43:06,715 INFO    MainThread:39892 [wandb_run.py:_restore():2405] restore
+2025-08-08 12:43:06,715 INFO    MainThread:39892 [wandb_run.py:_restore():2411] restore done
+2025-08-08 12:43:08,835 INFO    MainThread:39892 [wandb_run.py:_footer_history_summary_info():3903] rendering history
+2025-08-08 12:43:08,835 INFO    MainThread:39892 [wandb_run.py:_footer_history_summary_info():3935] rendering summary
+2025-08-08 12:43:08,836 INFO    MainThread:39892 [wandb_run.py:_footer_sync_info():3864] logging synced files

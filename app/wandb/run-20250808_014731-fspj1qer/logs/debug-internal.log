@@ -1,0 +1,13 @@
+{"time":"2025-08-08T01:47:31.7025722+05:30","level":"INFO","msg":"stream: starting","core version":"0.21.0"}
+{"time":"2025-08-08T01:47:32.115949+05:30","level":"INFO","msg":"stream: created new stream","id":"fspj1qer"}
+{"time":"2025-08-08T01:47:32.115949+05:30","level":"INFO","msg":"stream: started","id":"fspj1qer"}
+{"time":"2025-08-08T01:47:32.115949+05:30","level":"INFO","msg":"handler: started","stream_id":"fspj1qer"}
+{"time":"2025-08-08T01:47:32.115949+05:30","level":"INFO","msg":"sender: started","stream_id":"fspj1qer"}
+{"time":"2025-08-08T01:47:32.115949+05:30","level":"INFO","msg":"writer: Do: started","stream_id":"fspj1qer"}
+{"time":"2025-08-08T02:33:48.529266+05:30","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/chinmayarvind23-student/disagreement-rag-v2/fspj1qer/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-08-08T10:55:34.707849+05:30","level":"INFO","msg":"stream: closing","id":"fspj1qer"}
+{"time":"2025-08-08T10:55:36.433256+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-08T10:55:36.778726+05:30","level":"INFO","msg":"sender: closed","stream_id":"fspj1qer"}
+{"time":"2025-08-08T10:55:36.7807748+05:30","level":"INFO","msg":"handler: closed","stream_id":"fspj1qer"}
+{"time":"2025-08-08T10:55:36.7807748+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":"fspj1qer"}
+{"time":"2025-08-08T10:55:36.7807748+05:30","level":"INFO","msg":"stream: closed","id":"fspj1qer"}

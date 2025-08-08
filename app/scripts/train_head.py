@@ -52,23 +52,18 @@ def _answer_once(q: str, retriever: BaseRetriever, synthesizer):
     return str(resp), passages, nodes
 
 # Sample answers for a question using the retriever and synthesizer
-# This function tries to get different phrasings of the answer by varying the temperature
-def _sample_answers(q: str, retriever: BaseRetriever, base_synth, n=3):
+# This function tries to get different phrasings of the answer by varying the temperature   
+def _sample_answers(q: str, retriever: BaseRetriever, _, n=3):
     nodes = retriever.retrieve(q)
     passages = _nodes_to_passages(nodes)
     outs = []
     temps = (0.35, 0.55, 0.75)[:n]
-    old_temp = getattr(Settings.llm, "temperature", None)
-    try:
-        for t in temps:
-            if hasattr(Settings.llm, "temperature"):
-                Settings.llm.temperature = t
-            resp = base_synth.synthesize(q, nodes)
-            outs.append((str(resp), passages, nodes))
-    finally:
-        if old_temp is not None and hasattr(Settings.llm, "temperature"):
-            Settings.llm.temperature = old_temp
-
+    for t in temps:
+        synth = get_response_synthesizer(response_mode="compact")
+        if hasattr(Settings.llm, "temperature"):
+            Settings.llm.temperature = t
+        resp = synth.synthesize(q, nodes)
+        outs.append((str(resp), passages, nodes))
     return outs
 
 # Main function to train the disagreement head
@@ -78,8 +73,8 @@ def main(n: int, out_path: str):
     wandb.init(project="disagreement-rag-v2", entity="chinmayarvind23-student", name=f"training-n{n}")
     wandb.config.update({
         "n": n,
-        "train_overlap_label_cut": 0.4,
-        "train_scvar_label_cut": 0.7,
+        "train_overlap_label_cut": 0.6,
+        "train_scvar_label_cut": 0.2,
         "train_entropy_label_cut": 4.2,
         "alpha_blend": 0.65
     })
@@ -105,9 +100,9 @@ def main(n: int, out_path: str):
 
         # flags high disagreement when overlap is low or self-consistency variance is high
         high_disagree = int(
-            feats["overlap"] < 0.4 or
-            feats["sc_var"]  > 0.7 or
-            feats["entropy_proxy"] > 4.2
+            feats["overlap"] < 0.6 or
+            feats["sc_var"]  > 0.2 or
+            feats["entropy_proxy"] > 1.5
         )
 
 
