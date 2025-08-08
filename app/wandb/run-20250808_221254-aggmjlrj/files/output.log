@@ -1,0 +1,5 @@
+llama_context: n_ctx_per_seq (4096) < n_ctx_train (32768) -- the full capacity of the model will not be utilized
+llama_kv_cache_unified: LLAMA_SET_ROWS=0, using old ggml_cpy() method for backwards compatibility
+Loading llama_index.core.storage.kvstore.simple_kvstore from data\index\docstore.json.
+Loading llama_index.core.storage.kvstore.simple_kvstore from data\index\index_store.json.
+resource module not available on Windows

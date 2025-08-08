@@ -1,0 +1,42 @@
+{
+  "os": "Windows-10-10.0.26100-SP0",
+  "python": "CPython 3.11.13",
+  "startedAt": "2025-08-08T16:42:54.374233Z",
+  "args": [
+    "--n",
+    "60"
+  ],
+  "program": "-m scripts.train_head",
+  "git": {
+    "remote": "https://github.com/chinmayarvind23/disagreement-aware-RAG.git",
+    "commit": "6b250484942d9b75732d254be4a29610c6c4b6fd"
+  },
+  "email": "chinmayarvind23@gmail.com",
+  "root": "C:\\Users\\chinm\\Documents\\disagreement-aware-RAG\\app",
+  "host": "MAIN_LAPTOP",
+  "executable": "C:\\Users\\chinm\\Documents\\disagreement-aware-RAG\\app\\.venv\\Scripts\\python.exe",
+  "cpu_count": 16,
+  "cpu_count_logical": 22,
+  "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "996764807168",
+      "used": "274357096448"
+    }
+  },
+  "memory": {
+    "total": "33844576256"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+      "memoryTotal": "8585740288",
+      "cudaCores": 4608,
+      "architecture": "Ada",
+      "uuid": "GPU-71e4dc92-f6e0-64a6-0bd5-93baa30c0f59"
+    }
+  ],
+  "cudaVersion": "13.0",
+  "writerId": "lnhbrw6i4l17td4xxg1uz2yvlj8rc6cq"
+}

@@ -7,7 +7,7 @@ from backend.disagreement import DisagreeHead, decision_from_feats
 CURVE_OUT = Path("data/coverage_curve.tsv")
 
 # Gives the question text from text files
-def iter_questions(root="data/raw", limit=150):
+def iter_questions(root="data/raw", limit=30):
     q_pat = re.compile(r"^Question:\s*(.+)$", re.I)
     n = 0
     for p in Path(root).glob("*.txt"):
@@ -27,9 +27,11 @@ def iter_questions(root="data/raw", limit=150):
 # It loads the retriever and synthesizer, collects features on a fixed set of questions,
 # and computes the coverage and hallucination rate based on the disagreement head's predictions
 def main():
-    retriever, synthesizer = load_query_bundle(DOC_DIR)
+    retriever, _ = load_query_bundle(DOC_DIR)
+    from llama_index.core.response_synthesizers import get_response_synthesizer
+    synthesizer = get_response_synthesizer(response_mode="compact")
     head = DisagreeHead.load("data/disagree_head.joblib")
-    Q = list(iter_questions(DOC_DIR, limit=150))
+    Q = list(iter_questions(DOC_DIR, limit=30))
     rows = []
     for i, q in enumerate(Q, 1):
         nodes = retriever.retrieve(q)

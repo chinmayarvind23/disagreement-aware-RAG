@@ -70,7 +70,7 @@ def _sample_answers(q: str, retriever: BaseRetriever, _, n=3):
 # It loads the retriever and synthesizer, samples answers for questions,
 # computes features, and trains the DisagreeHead model
 def main(n: int, out_path: str):
-    wandb.init(project="disagreement-rag-v2", entity="chinmayarvind23-student", name=f"training-n{n}-2")
+    wandb.init(project="disagreement-rag-v2", entity="chinmayarvind23-student", name=f"training-n{n}-3")
     wandb.config.update({
         "n": n,
         "train_overlap_label_cut": 0.45,
