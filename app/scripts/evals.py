@@ -29,7 +29,7 @@ def iter_questions(root="data/test", limit=30):
 nli = pipeline(
     "text-classification",
     model="facebook/bart-large-mnli",
-    return_all_scores=True,
+    top_k=None,
     device=0
 )
 
@@ -53,7 +53,7 @@ def main():
         rows.append({
             "q": q,
             "p_dis": p_dis,
-            "resp_text": resp,
+            "resp_text": str(resp),
             "passages": passages,
             **feats
         })
@@ -70,23 +70,27 @@ def main():
     np.savez("data/test_preds.npz", y_true=y_true, y_score=y_score)
     taus = [round(x, 2) for x in np.linspace(0.1, 0.8, 15)]
     results = []
-    halluc_threshold = 0.5
+    halluc_threshold = 0.35
     for tau in taus:
         answered, errs = 0, 0
         for r in rows:
             decision = decision_from_feats(r["p_dis"], r, tau=tau)
             if decision == "answer":
                 answered += 1
-                entail_probs = []
+                claim_sents = [s.strip() for s in re.split(r'(?<=[.?!])\s+', r["resp_text"]) if 3 <= len(s.strip()) <= 300]
+                if not claim_sents:
+                    claim_sents = [r["resp_text"].strip()]
+                entail_scores_per_passage = []
                 for prem in r["passages"]:
-                    scores = nli((prem, r["resp_text"]))
-                    ent_score = next(item["score"]
-                                     for item in scores
-                                     if item["label"] == "ENTAILMENT")
-                    entail_probs.append(ent_score)
-                mean_ent = sum(entail_probs) / len(entail_probs) if entail_probs else 0.0
-                errs += int(mean_ent < halluc_threshold)
-
+                    pairs = [{"text": str(prem), "text_pair": s} for s in claim_sents]
+                    scores_list = nli(pairs, truncation=True, max_length=512)
+                    ent_scores = [
+                        next(item["score"] for item in scores if item["label"].upper() == "ENTAILMENT")
+                        for scores in scores_list
+                    ]
+                    entail_scores_per_passage.append(max(ent_scores) if ent_scores else 0.0)
+                best_entail = max(entail_scores_per_passage) if entail_scores_per_passage else 0.0
+                errs += int(best_entail < halluc_threshold)
         cov = answered / max(1, len(rows))
         err_rate = (errs / answered) if answered else 0.0
         results.append({

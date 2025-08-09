@@ -7,8 +7,17 @@ from backend.disagreement import DisagreeHead, decision_from_feats
 import csv
 import numpy as np
 from sklearn.metrics import roc_auc_score
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="Disagreement-Aware RAG")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 # load RAG and head
 _retriever, _synth = load_query_bundle(DOC_DIR)
