@@ -1,103 +1,281 @@
-import Image from "next/image";
+"use client";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
+
+type Source = { title: string; text: string };
+type QAResp = {
+  answer: string;
+  sources: Source[];
+  risk: { p_disagree: number; sc_var: number; overlap: number; entropy_proxy: number };
+  decision: "answer" | "abstain";
+};
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [q, setQ] = useState("");
+  const [resp, setResp] = useState<QAResp | null>(null);
+  const [curve, setCurve] = useState<any[]>([]);
+  const [auc, setAuc] = useState<number | null>(null);
+  const [loadingQA, setLoadingQA] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  // light/dark theme
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+  useEffect(() => {
+    const saved = typeof window !== "undefined" ? localStorage.getItem("theme") : null;
+    const prefersDark =
+      typeof window !== "undefined" &&
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setTheme((saved as "light" | "dark") || (prefersDark ? "dark" : "light"));
+  }, []);
+  useEffect(() => {
+    if (typeof window !== "undefined") localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  useEffect(() => {
+    axios
+      .get("/api/metrics") // <- through Next.js rewrite to FastAPI /metrics
+      .then(({ data }) => {
+        const pts = data.coverage_curve.map((p: any) => ({
+          tau: p.tau,
+          coverage: p.coverage,
+          halluc: p.halluc_rate,
+        }));
+        setCurve(pts);
+        setAuc(data.roc_auc);
+      })
+      .catch(() => {
+        // ignore for now
+      });
+  }, []);
+
+  const ask = async () => {
+    if (!q.trim()) return;
+    setLoadingQA(true);
+    setResp(null);
+    try {
+      const r = await axios.post("/api/qa", { query: q }); // -> FastAPI /qa
+      setResp(r.data);
+    } catch (e) {
+      alert("QA request failed. Is FastAPI running on :8000?");
+    } finally {
+      setLoadingQA(false);
+    }
+  };
+
+  return (
+    <div className={`container ${theme}`}>
+      <header>
+        <h1>Disagreement-Aware RAG</h1>
+        <div className="right">
+          <button
+            className="toggle"
+            onClick={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}
+            title="Toggle light/dark theme"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            {theme === "dark" ? "☀️ Light" : "🌙 Dark"}
+          </button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+        <p className="muted">
+          Calibrate answers using disagreement risk, evidence overlap, and self-consistency.
+        </p>
+      </header>
+
+      <section className="card">
+        <h2>Ask a question</h2>
+        <div className="row">
+          <input
+            type="text"
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+            placeholder="Ask about the indexed corpus…"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+          <button onClick={ask} disabled={loadingQA}>
+            {loadingQA ? "Thinking…" : "Ask"}
+          </button>
+        </div>
+
+        {resp && (
+          <div className="answer">
+            <div className="answer-header">
+              <span className={`badge ${resp.decision === "answer" ? "ok" : "warn"}`}>
+                {resp.decision === "answer" ? "Answered" : "Abstained"}
+              </span>
+              <span className="risk">
+                p(disagree): <b>{resp.risk.p_disagree.toFixed(2)}</b> ·{" "}
+                overlap: <b>{resp.risk.overlap.toFixed(2)}</b> ·{" "}
+                sc_var: <b>{resp.risk.sc_var.toFixed(2)}</b> ·{" "}
+                entropy: <b>{resp.risk.entropy_proxy.toFixed(2)}</b>
+              </span>
+            </div>
+
+            {resp.decision === "answer" ? (
+              <p className="answer-text">{resp.answer}</p>
+            ) : (
+              <p className="muted">
+                The system abstained (risk too high based on the head + heuristics).
+              </p>
+            )}
+
+            <div className="sources">
+              <h3>Top sources</h3>
+              {resp.sources?.slice(0, 3).map((s, i) => (
+                <div className="src" key={i}>
+                  <div className="src-title">{s.title || `Source ${i + 1}`}</div>
+                  <div className="src-text">
+                    {(s.text || "").slice(0, 300)}
+                    {(s.text || "").length > 300 ? "…" : ""}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </section>
+
+      <section className="card">
+        <h2>Coverage vs Hallucination (by τ)</h2>
+        {auc !== null && (
+          <p className="muted">
+            ROC AUC on held-out test set: <b>{auc.toFixed(3)}</b>
+          </p>
+        )}
+        {curve.length > 0 ? (
+          <div className="chart">
+            <ResponsiveContainer width="100%" height={360}>
+              <LineChart data={curve} margin={{ top: 12, right: 24, left: 6, bottom: 12 }}>
+                <XAxis dataKey="tau" tickFormatter={(t) => t.toFixed(2)} />
+                <YAxis domain={[0, 1]} />
+                <Tooltip formatter={(v: number) => v.toFixed(3)} />
+                <Legend />
+                <Line name="Coverage" type="monotone" dataKey="coverage" dot={false} stroke="#2563eb" />
+                <Line name="Hallucination rate" type="monotone" dataKey="halluc" dot={false} stroke="#10b981" />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        ) : (
+          <p className="muted">
+            Run the evaluator to generate <code>data/coverage_curve.tsv</code> and{" "}
+            <code>data/test_preds.npz</code>, then refresh.
+          </p>
+        )}
+      </section>
+
+      <footer>
+        <span className="muted">τ controls how conservative the system is. Higher τ → answer more, risk more.</span>
       </footer>
+
+      <style jsx>{`
+        :root {
+          --bg: #ffffff;
+          --text: #0f172a;
+          --muted: #64748b;
+          --panel: #ffffff;
+          --border: #e5e7eb;
+          --code: #f1f5f9;
+          --btn: #2563eb;
+          --btn-text: #ffffff;
+          --src-text: #334155;
+        }
+        .dark {
+          --bg: #0b0f19;
+          --text: #e5e7eb;
+          --muted: #a3a3a3;
+          --panel: #0f172a;
+          --border: #30343b;
+          --code: rgba(0,0,0,0.45);
+          --btn: #3f3f46;
+          --btn-text: #f4f4f5;
+          --src-text: #d1d5db;
+        }
+        .container {
+          max-width: 980px;
+          margin: 0 auto;
+          padding: 24px;
+          font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+          color: var(--text);
+          background: var(--bg);
+          min-height: 100vh;
+          transition: background 0.2s ease, color 0.2s ease;
+        }
+        header { text-align: center; margin-bottom: 24px; position: relative; }
+        header .right { position: absolute; right: 0; top: 0; }
+        .toggle {
+          background: var(--btn);
+          color: var(--btn-text);
+          border: 1px solid var(--border);
+          padding: 8px 12px;
+          border-radius: 10px;
+          cursor: pointer;
+        }
+        h1 { font-size: 32px; margin: 0 0 6px; }
+        h2 { font-size: 20px; margin: 0 0 12px; }
+        h3 { font-size: 16px; margin: 12px 0 8px; }
+        .muted { color: var(--muted); }
+        .card {
+          background: var(--panel);
+          border: 1px solid var(--border);
+          border-radius: 14px;
+          padding: 18px;
+          margin-bottom: 20px;
+          box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+        }
+        .row { display: flex; gap: 10px; }
+        input {
+          flex: 1;
+          border: 1px solid var(--border);
+          border-radius: 10px;
+          padding: 10px 12px;
+          font-size: 14px;
+          color: var(--text);
+          background: var(--bg);
+        }
+        button {
+          background: var(--btn);
+          color: var(--btn-text);
+          border: none;
+          border-radius: 10px;
+          padding: 10px 16px;
+          font-weight: 600;
+          cursor: pointer;
+        }
+        button:disabled { opacity: 0.6; cursor: default; }
+        .answer { margin-top: 14px; }
+        .answer-header {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          justify-content: space-between;
+          flex-wrap: wrap;
+        }
+        .badge {
+          display: inline-block;
+          padding: 4px 10px;
+          border-radius: 999px;
+          font-size: 12px;
+          font-weight: 700;
+          border: 1px solid var(--border);
+        }
+        .badge.ok { background: #ecfdf5; color: #065f46; border-color: #10b981; }
+        .badge.warn { background: #fff7ed; color: #9a3412; border-color: #f59e0b; }
+        .risk { color: var(--text); opacity: 0.9; font-size: 13px; }
+        .answer-text { margin: 10px 0 6px; line-height: 1.5; white-space: pre-wrap; }
+        .sources { margin-top: 10px; }
+        .src { border: 1px solid var(--border); border-radius: 10px; padding: 10px; margin-top: 8px; }
+        .src-title { font-weight: 600; margin-bottom: 6px; }
+        .src-text { color: var(--src-text); font-size: 14px; }
+        .chart { margin-top: 8px; }
+        footer { text-align: center; margin-top: 12px; }
+        code { background: var(--code); padding: 2px 6px; border-radius: 6px; }
+      `}</style>
     </div>
   );
 }

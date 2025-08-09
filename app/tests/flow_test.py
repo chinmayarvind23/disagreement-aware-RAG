@@ -30,7 +30,8 @@ retr, synth = load_query_bundle(DOC_DIR)
 head = DisagreeHead.load("data/disagree_head.joblib")
 
 # Get questions
-paths = list(pathlib.Path(DOC_DIR).glob("*.txt"))
+QUESTION_DIR = pathlib.Path("data/test")
+paths = list(QUESTION_DIR.glob("*.txt"))
 
 def get_question(p: pathlib.Path):
     for line in p.read_text(encoding="utf-8", errors="ignore").splitlines():
@@ -55,8 +56,8 @@ for p in picked:
 
     decision = decision_from_feats(
         pdis, feats,
-        tau=head.threshold,
-        min_overlap=0.6,
+        tau=0.5,
+        min_overlap=0.4,
         max_sc=0.2
     )
 
