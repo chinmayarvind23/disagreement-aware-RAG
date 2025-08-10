@@ -155,18 +155,16 @@ SC_SAMPLES=5             # re-samples to estimate sc_var (k)
 ```
 
 Generation sampling (for sc_var)
+
 `
 RAG_TEMP=0.7             # base temperature; code derives a small range around it
 `
 
 Evaluation (entailment auditor threshold)
+
 `
 HALLUC_THRESHOLD=0.35
 `
-
-Frontend -> Backend (direct call; skip dev proxy) 
-Set this in frontend/.env.local or your shell when running npm dev:
-` NEXT_PUBLIC_API_BASE=http://127.0.0.1:8000`
 
 3) Start the backend
 
@@ -176,6 +174,7 @@ poetry run uvicorn backend.main:app --reload --port 8000
 ```
 
 Health check
+
 curl http://127.0.0.1:8000/healthz`
 
 4) Start the frontend
