@@ -146,46 +146,55 @@ poetry install or uv sync
 
 ### 2) Configure params (`app/.env`)
 
-`# Abstention policy
+```
+- Abstention policy
 HEAD_TAU=0.60            # τ (risk tolerance). Higher → answer more.
 DEC_MIN_OVERLAP=0.35     # require at least this overlap to answer
 DEC_MAX_SC=0.30          # require self-consistency variance ≤ this
 SC_SAMPLES=5             # re-samples to estimate sc_var (k)
+```
 
 # Generation sampling (for sc_var)
-`RAG_TEMP=0.7             # base temperature; code derives a small range around it
+`
+RAG_TEMP=0.7             # base temperature; code derives a small range around it
+`
 
 # Evaluation (entailment auditor threshold)
-`HALLUC_THRESHOLD=0.35
+`
+HALLUC_THRESHOLD=0.35
+`
 
-# Frontend -> Backend (direct call; skip dev proxy)
-` Set this in frontend/.env.local or your shell when running npm dev:
+# Frontend -> Backend (direct call; skip dev proxy) 
+Set this in frontend/.env.local or your shell when running npm dev:
 ` NEXT_PUBLIC_API_BASE=http://127.0.0.1:8000`
 
 ### 3) Start the backend
 
-`# from app/
+```
+# from app/
 poetry run uvicorn backend.main:app --reload --port 8000
-# health check
+```
+
+### health check
 curl http://127.0.0.1:8000/healthz`
 
 ### 4) Start the frontend
 
-`cd app/frontend
+```
+cd app/frontend
 npm install
-
-Either export once (Linux/macOS) or set in your shell (Windows):
-export NEXT_PUBLIC_API_BASE="http://127.0.0.1:8000"
-PowerShell:  $env:NEXT_PUBLIC_API_BASE = "http://127.0.0.1:8000"
 npm run dev
+```
 open http://localhost:3000`
 
 ### 5) Reproduce the metrics plot
 
-`# from app/
-`poetry run python -m scripts.evals'
+```
+# from app/
+poetry run python -m scripts.evals
+```
 
-Writes data/coverage_curve.tsv and data/test_preds.npz 
+Writes data/coverage_curve.tsv and data/test_preds.npz
 Refresh the UI to see the curve & AUC
 
 * * * * *
