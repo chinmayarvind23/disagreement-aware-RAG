@@ -129,7 +129,7 @@ app/
 Setup & run
 -----------
 
-### 0) Requirements
+0) Requirements
 
 -   Python 3.11
 
@@ -137,14 +137,14 @@ Setup & run
 
 -   Poetry (or `uv`) recommended
 
-### 1) Backend install
+1) Backend install
 
 ```
 cd app
 poetry install or uv sync
 ```
 
-### 2) Configure params (`app/.env`)
+2) Configure params (`app/.env`)
 
 ```
 - Abstention policy
@@ -154,31 +154,31 @@ DEC_MAX_SC=0.30          # require self-consistency variance ≤ this
 SC_SAMPLES=5             # re-samples to estimate sc_var (k)
 ```
 
-# Generation sampling (for sc_var)
+Generation sampling (for sc_var)
 `
 RAG_TEMP=0.7             # base temperature; code derives a small range around it
 `
 
-# Evaluation (entailment auditor threshold)
+Evaluation (entailment auditor threshold)
 `
 HALLUC_THRESHOLD=0.35
 `
 
-# Frontend -> Backend (direct call; skip dev proxy) 
+Frontend -> Backend (direct call; skip dev proxy) 
 Set this in frontend/.env.local or your shell when running npm dev:
 ` NEXT_PUBLIC_API_BASE=http://127.0.0.1:8000`
 
-### 3) Start the backend
+3) Start the backend
 
 ```
 # from app/
 poetry run uvicorn backend.main:app --reload --port 8000
 ```
 
-### health check
+Health check
 curl http://127.0.0.1:8000/healthz`
 
-### 4) Start the frontend
+4) Start the frontend
 
 ```
 cd app/frontend
@@ -187,7 +187,7 @@ npm run dev
 ```
 open http://localhost:3000`
 
-### 5) Reproduce the metrics plot
+5) Reproduce the metrics plot
 
 ```
 # from app/
