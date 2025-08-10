@@ -23,10 +23,6 @@ What the app does
 
 **Decision rule (simple):**
 
-scss
-
-CopyEdit
-
 `Answer  iff  (p_disagree < τ)  AND  (overlap ≥ min_overlap)  AND  (sc_var ≤ max_sc)
 Else → Abstain`
 
@@ -96,11 +92,6 @@ Tech stack
 
 Repository layout
 -----------------
-
-bash
-
-CopyEdit
-
 `app/
   backend/
     main.py             # FastAPI app: /qa, /metrics, /healthz
@@ -136,18 +127,10 @@ Setup & run
 
 ### 1) Backend install
 
-bash
-
-CopyEdit
-
 `cd app
 poetry install              # or: uv sync`
 
-### 2) Configure knobs (`app/.env`)
-
-ini
-
-CopyEdit
+### 2) Configure params (`app/.env`)
 
 `# Abstention policy
 HEAD_TAU=0.60            # τ (risk tolerance). Higher → answer more.
@@ -156,20 +139,16 @@ DEC_MAX_SC=0.30          # require self-consistency variance ≤ this
 SC_SAMPLES=5             # re-samples to estimate sc_var (k)
 
 # Generation sampling (for sc_var)
-RAG_TEMP=0.7             # base temperature; code derives a small range around it
+`RAG_TEMP=0.7             # base temperature; code derives a small range around it
 
 # Evaluation (entailment auditor threshold)
-HALLUC_THRESHOLD=0.35
+`HALLUC_THRESHOLD=0.35
 
 # Frontend -> Backend (direct call; skip dev proxy)
-# Set this in frontend/.env.local or your shell when running npm dev:
-# NEXT_PUBLIC_API_BASE=http://127.0.0.1:8000`
+` Set this in frontend/.env.local or your shell when running npm dev:
+` NEXT_PUBLIC_API_BASE=http://127.0.0.1:8000`
 
 ### 3) Start the backend
-
-bash
-
-CopyEdit
 
 `# from app/
 poetry run uvicorn backend.main:app --reload --port 8000
@@ -177,10 +156,6 @@ poetry run uvicorn backend.main:app --reload --port 8000
 curl http://127.0.0.1:8000/healthz`
 
 ### 4) Start the frontend
-
-bash
-
-CopyEdit
 
 `cd app/frontend
 npm install
@@ -190,13 +165,7 @@ npm install
 npm run dev
 # open http://localhost:3000`
 
-*(If you prefer Next.js rewrites instead, keep axios pointed to `/api/...` and add the rewrite rules in `next.config.ts`.)*
-
 ### 5) Reproduce the metrics plot
-
-bash
-
-CopyEdit
 
 `# from app/
 poetry run python -m scripts.evals
@@ -212,17 +181,9 @@ API (brief)
 
 **Body**
 
-json
-
-CopyEdit
-
 `{ "query": "your question" }`
 
 **Response**
-
-json
-
-CopyEdit
 
 `{
   "answer": "...",
@@ -235,10 +196,6 @@ CopyEdit
 
 ### `GET /metrics`
 
-json
-
-CopyEdit
-
 `{
   "coverage_curve": [
     { "tau": 0.55, "coverage": 0.967, "halluc_rate": 0.034 },
@@ -248,10 +205,6 @@ CopyEdit
 }`
 
 ### `GET /healthz`
-
-json
-
-CopyEdit
 
 `{ "ok": true }`
 
