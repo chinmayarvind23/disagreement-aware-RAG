@@ -1,2 +1,0 @@
-# Disagreement-Aware RAG
-
