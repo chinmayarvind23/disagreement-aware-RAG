@@ -159,11 +159,12 @@ curl http://127.0.0.1:8000/healthz`
 
 `cd app/frontend
 npm install
-# Either export once (Linux/macOS) or set in your shell (Windows):
-# export NEXT_PUBLIC_API_BASE="http://127.0.0.1:8000"
-# PowerShell:  $env:NEXT_PUBLIC_API_BASE = "http://127.0.0.1:8000"
+
+Either export once (Linux/macOS) or set in your shell (Windows):
+export NEXT_PUBLIC_API_BASE="http://127.0.0.1:8000"
+PowerShell:  $env:NEXT_PUBLIC_API_BASE = "http://127.0.0.1:8000"
 npm run dev
-# open http://localhost:3000`
+open http://localhost:3000`
 
 ### 5) Reproduce the metrics plot
 
