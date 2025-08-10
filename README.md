@@ -1,14 +1,14 @@
 Disagreement-Aware RAG (Answer/Abstain)
 =======================================
 
-**One-liner:** A retrieval-augmented QA system that **predicts disagreement risk** and **abstains** when answers are likely contentious or weakly grounded---improving reliability at a chosen coverage level. Inspired by Kang et al., *Everyone's Voice Matters* (AAAI 2023).
+This app is a retrieval-augmented QA system that **predicts disagreement risk** and **abstains** when answers are likely contentious or weakly grounded. This improves reliability at a chosen coverage (questions answered out of total asked) level. This project was created inspired by Kang et al., *Everyone's Voice Matters* (AAAI 2023).
 
 * * * * *
 
 Why this matters
 ----------------
 
-Large language models can sound confident while being wrong---especially on subjective or under-specified questions. Following Kang et al.'s framing that **disagreement is signal, not noise**, this project treats "people would disagree here" as a first-class prediction target. We then enforce an **answer/abstain policy**: answer when risk is low and evidence support is strong; abstain otherwise. That yields a clear **coverage--risk trade-off** you can tune to your application.
+Large language models can be confident about incorrect facts. Kang et al.' states that **disagreement is signal, not noise**, this project treats "people would disagree here" as a prediction target and enforce an **answer/abstain policy**: answer when risk is low and evidence support is strong; abstain otherwise. This yields a clear **coverage--risk trade-off** that one can tune with larger datasets and for safety critical use cases.
 
 -   Kang, Dongyeop et al., 2023 --- *Everyone's Voice Matters: Quantifying Annotation Disagreement Using Demographic Information.* AAAI. DOI: <https://doi.org/10.1609/aaai.v37i12.26698>
 
@@ -17,9 +17,9 @@ Large language models can sound confident while being wrong---especially on subj
 What the app does
 -----------------
 
--   **Ask & Cite**: You type a question. The system retrieves documents, synthesizes an answer with citations, computes **disagreement risk**, and either **answers** or **abstains**.
+-   **Ask & Cite**: User types in a query. The system retrieves documents, synthesizes an answer with citations, computes **disagreement risk**, and either **answers** or **abstains**.
 
--   **Metrics**: The UI plots **Coverage vs. Hallucination** as you vary the abstention threshold **τ** (tau). The backend also reports an ROC-AUC against a lightweight entailment-based auditor.
+-   **Metrics**: The UI plots **Coverage vs. Hallucination** as the abstention threshold **τ** (tau) changes. The backend also reports an ROC-AUC against an entailment-based auditor.
 
 **Decision rule (simple):**
 
@@ -30,30 +30,30 @@ Else → Abstain`
 
 -   `overlap`: ROUGE-L--style semantic overlap between answer and retrieved evidence
 
--   `sc_var`: self-consistency variance across k re-sampled answers (higher = less stable)
+-   `sc_var`: self-consistency variance across k re-sampled answers (higher => less stable)
 
 * * * * *
 
-How it works (end-to-end)
+How it works
 -------------------------
 
-1.  **Retrieve** top-k passages from a small indexed corpus (hybrid BM25+vectors via LlamaIndex).
+1.  **Retrieve** top-k passages from a small indexed corpus (BM25 + FAISS vectors via LlamaIndex).
 
 2.  **Generate** an answer and **k** temperature-varied re-samples (e.g., *T* ≈ 0.49, 0.60, 0.70, 0.80, 0.91) to measure **self-consistency**.
 
 3.  **Compute features**:
 
-    -   `sc_var` --- variance across the k sampled answers
+    -   `sc_var` --- variance across the k-sampled answers
 
     -   `overlap` --- ROUGE-L--like overlap between the final answer and concatenated evidence
 
     -   `entropy_proxy` --- light uncertainty proxy from the answer text
 
-4.  **Predict disagreement risk** with a tiny **logistic regression head** → `p_disagree`.
+4.  **Predict disagreement risk** with a **logistic regression head** → `p_disagree`.
 
-5.  **Gate** with the rule above → **answer** or **abstain**.
+5.  **Answer/Abstain** with the rule above → **answer** or **abstain**.
 
-6.  **Evaluate (offline)**: Use a zero-shot NLI auditor (**facebook/bart-large-mnli**) to score **entailment** of the answer against the evidence. If best-entailment < threshold, count it as a hallucination.
+6.  **Evaluate (offline)**: Uses a zero-shot NLI auditor (**facebook/bart-large-mnli**) to score **entailment** of the answer against the evidence. If best-entailment < threshold, count it as a hallucination.
 
     -   Model card: https://huggingface.co/facebook/bart-large-mnli
 
@@ -61,7 +61,7 @@ How it works (end-to-end)
 
 * * * * *
 
-Results (toy slice; reproducible)
+Results
 ---------------------------------
 
 From `scripts/evals.py` on a small test set (30 questions):
@@ -250,11 +250,9 @@ Interpreting τ (risk tolerance)
 Limitations & notes
 -------------------
 
--   **Data scale**: small corpus + small eval set → the ROC-AUC can be noisy. The **policy curve** (coverage vs. hallucination) is the key artifact.
+-   **Data scale**: small corpus + small eval set → the ROC-AUC can be noisy. The coverage vs. hallucination curve is the main focus here.
 
--   **Proxy labels**: the head is trained against **LLM-based proxies** (self-consistency, entailment, overlap), not human-annotator disagreement labels. That was done due to a lack of human disagreement data to do a Q&A on. The **head** is trained on a few samples of synthetic data, so it may not generalize to all domains.
-
--   **Calibration**: if you want stable probabilities without hand-tuning τ, add isotonic calibration on `data/test_preds.npz` or auto-pick τ from `coverage_curve.tsv` to hit a target risk (both are a few lines).
+-   **Proxy labels**: the head is trained against **LLM-response proxies** (self-consistency, entailment, overlap), not human-annotator disagreement labels. That was done due to a lack of human disagreement data. The **logistic regression head** is trained on a few samples of synthetic data, so it may not generalize to all domains.
 
 * * * * *
 
