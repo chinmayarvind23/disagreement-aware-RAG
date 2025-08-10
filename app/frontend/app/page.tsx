@@ -10,6 +10,42 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+const API = process.env.NEXT_PUBLIC_API_BASE || "http://127.0.0.1:8000";
+const COLORS = {
+  light: {
+    "--background": "#ffffff",
+    "--foreground": "#0f172a",
+    "--muted": "#64748b",
+    "--panel": "#ffffff",
+    "--border": "#e5e7eb",
+    "--code": "#f1f5f9",
+    "--btn": "#2563eb",
+    "--btn-text": "#ffffff",
+    "--src-text": "#334155",
+    "--bg": "#ffffff",
+    "--text": "#0f172a",
+  },
+  dark: {
+    "--background": "#0b0f19",
+    "--foreground": "#e5e7eb",
+    "--muted": "#a3a3a3",
+    "--panel": "#0f172a",
+    "--border": "#30343b",
+    "--code": "rgba(0,0,0,0.45)",
+    "--btn": "#3f3f46",
+    "--btn-text": "#f4f4f5",
+    "--src-text": "#d1d5db",
+    "--bg": "#0b0f19",
+    "--text": "#e5e7eb",
+  },
+} as const;
+
+function applyTheme(next: "light" | "dark") {
+  const root = document.documentElement;
+  Object.entries(COLORS[next]).forEach(([k, v]) =>
+    root.style.setProperty(k, String(v))
+  );
+}
 
 type Source = { title: string; text: string };
 type QAResp = {
@@ -30,49 +66,51 @@ export default function Home() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
   useEffect(() => {
     const saved = typeof window !== "undefined" ? localStorage.getItem("theme") : null;
-    const prefersDark =
-      typeof window !== "undefined" &&
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches;
-    setTheme((saved as "light" | "dark") || (prefersDark ? "dark" : "light"));
+    const prefersDark = typeof window !== "undefined"
+      && window.matchMedia?.("(prefers-color-scheme: dark)").matches;
+    const next = (saved as "light" | "dark") || (prefersDark ? "dark" : "light");
+    setTheme(next);
+    applyTheme(next);
   }, []);
+
   useEffect(() => {
-    if (typeof window !== "undefined") localStorage.setItem("theme", theme);
+    if (!theme) return;
+    localStorage.setItem("theme", theme);
+    applyTheme(theme);
   }, [theme]);
 
+
   useEffect(() => {
-    axios
-      .get("/api/metrics") // <- through Next.js rewrite to FastAPI /metrics
-      .then(({ data }) => {
-        const pts = data.coverage_curve.map((p: any) => ({
-          tau: p.tau,
-          coverage: p.coverage,
-          halluc: p.halluc_rate,
-        }));
-        setCurve(pts);
-        setAuc(data.roc_auc);
-      })
-      .catch(() => {
-        // ignore for now
-      });
-  }, []);
+  axios.get(`${API}/metrics`)
+    .then(({ data }) => {
+      const pts = data.coverage_curve.map((p: any) => ({
+        tau: p.tau,
+        coverage: p.coverage,
+        halluc: p.halluc_rate,
+      }));
+      setCurve(pts);
+      setAuc(data.roc_auc);
+    })
+    .catch(console.error);
+}, []);
 
   const ask = async () => {
-    if (!q.trim()) return;
-    setLoadingQA(true);
-    setResp(null);
-    try {
-      const r = await axios.post("/api/qa", { query: q }); // -> FastAPI /qa
-      setResp(r.data);
-    } catch (e) {
-      alert("QA request failed. Is FastAPI running on :8000?");
-    } finally {
-      setLoadingQA(false);
-    }
+  if (!q.trim()) return;
+  setLoadingQA(true);
+  setResp(null);
+  try {
+    const r = await axios.post(`${API}/qa`, { query: q });
+    setResp(r.data);
+  } catch (e: any) {
+    console.error("QA error:", e?.response?.data || e?.message || e);
+    alert("QA request failed. Check backend logs.");
+  } finally {
+    setLoadingQA(false);
+  }
   };
 
   return (
-    <div className={`container ${theme}`}>
+    <div className={`container`}>
       <header>
         <h1>Disagreement-Aware RAG</h1>
         <div className="right">
@@ -154,7 +192,19 @@ export default function Home() {
               <LineChart data={curve} margin={{ top: 12, right: 24, left: 6, bottom: 12 }}>
                 <XAxis dataKey="tau" tickFormatter={(t) => t.toFixed(2)} />
                 <YAxis domain={[0, 1]} />
-                <Tooltip formatter={(v: number) => v.toFixed(3)} />
+                <Tooltip
+                  labelFormatter={(t: number) => `τ = ${t.toFixed(2)}`}
+                  formatter={(v: number, name) => [v.toFixed(3), name]}
+                  contentStyle={{
+                    backgroundColor: "var(--panel)",
+                    border: "1px solid var(--border)",
+                    borderRadius: 10,
+                    color: "var(--text)",
+                    boxShadow: "0 6px 18px rgba(0,0,0,0.25)",
+                  }}
+                  labelStyle={{ color: "var(--text)" }}
+                  itemStyle={{ color: "var(--text)" }}
+                />
                 <Legend />
                 <Line name="Coverage" type="monotone" dataKey="coverage" dot={false} stroke="#2563eb" />
                 <Line name="Hallucination rate" type="monotone" dataKey="halluc" dot={false} stroke="#10b981" />

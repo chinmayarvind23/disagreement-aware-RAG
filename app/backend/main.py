@@ -1,4 +1,5 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
+import traceback
 from pydantic import BaseModel
 from typing import List, Dict
 from backend.rag import load_query_bundle, answer_query, DOC_DIR
@@ -77,40 +78,44 @@ def health():
 
 @app.post("/qa", response_model=QAResponse)
 def qa(req: QARequest):
-    # RAG answer + sources cited
-    out = answer_query(req.query, _retriever, _synth)
-    answer = out["answer"]
-    sources = out["sources"]
-    
-    # Compute features for disagreement risk
-    passages = [s["text"] for s in sources[:3]]
-    samples = _sample_answers(req.query, SC_SAMPLES)
-    feats = feature_vector(answer, passages, samples)
+    try:
+        # RAG answer + sources cited
+        out = answer_query(req.query, _retriever, _synth)
+        answer = out["answer"]
+        sources = out["sources"]
+        
+        # Compute features for disagreement risk
+        passages = [s["text"] for s in sources[:3]]
+        samples = _sample_answers(req.query, SC_SAMPLES)
+        feats = feature_vector(answer, passages, samples)
 
-    # predict disagreement probability
-    if getattr(_head, "model", None) is not None:
-        p_dis = _head.predict_proba(feats)
-        decision = decision_from_feats(
-            p_dis, feats,
-            tau=_head.threshold,
-            min_overlap=MIN_OVERLAP,
-            max_sc=MAX_SC
+        # predict disagreement probability
+        if getattr(_head, "model", None) is not None:
+            p_dis = _head.predict_proba(feats)
+            decision = decision_from_feats(
+                p_dis, feats,
+                tau=_head.threshold,
+                min_overlap=MIN_OVERLAP,
+                max_sc=MAX_SC
+            )
+        else:
+            p_dis = 0.5
+            decision = "answer"
+
+        return QAResponse(
+            answer=answer,
+            sources=sources,
+            risk={
+                "p_disagree": float(p_dis),
+                "sc_var": float(feats["sc_var"]),
+                "overlap": float(feats["overlap"]),
+                "entropy_proxy": float(feats["entropy_proxy"]),
+            },
+            decision=decision,
         )
-    else:
-        p_dis = 0.5
-        decision = "answer"
-
-    return QAResponse(
-        answer=answer,
-        sources=sources,
-        risk={
-            "p_disagree": float(p_dis),
-            "sc_var": float(feats["sc_var"]),
-            "overlap": float(feats["overlap"]),
-            "entropy_proxy": float(feats["entropy_proxy"]),
-        },
-        decision=decision,
-    )
+    except Exception as e:
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/metrics")
 def metrics():

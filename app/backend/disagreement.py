@@ -16,7 +16,8 @@ class DisagreeHead:
     # Predict the probability of disagreement given features
     def predict_proba(self, feats: dict) -> float:
         x = np.array([[feats["sc_var"], feats["overlap"], feats["entropy_proxy"]]])
-        return float(self.model.predict_proba(x)[0, 1])
+        p = float(self.model.predict_proba(x)[0, 1])
+        return 1.0 - p
 
     # Save the model and threshold to a file
     def save(self, path: str):
