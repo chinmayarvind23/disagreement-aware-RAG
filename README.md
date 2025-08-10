@@ -175,9 +175,7 @@ poetry run uvicorn backend.main:app --reload --port 8000
 
 Health check
 
-`
 curl http://127.0.0.1:8000/healthz
-`
 
 4) Start the frontend
 
@@ -187,9 +185,9 @@ npm install
 npm run dev
 ```
 
-`
 open http://localhost:3000
-`
+
+
 
 5) Reproduce the metrics plot
 
@@ -254,7 +252,7 @@ Limitations & notes
 
 -   **Data scale**: small corpus + small eval set → the ROC-AUC can be noisy. The **policy curve** (coverage vs. hallucination) is the key artifact.
 
--   **Proxy labels**: the head is trained against **LLM-based proxies** (self-consistency, entailment, overlap), not human-annotator disagreement labels. That's intentional for a laptop-scale demo; it trades some calibration for speed.
+-   **Proxy labels**: the head is trained against **LLM-based proxies** (self-consistency, entailment, overlap), not human-annotator disagreement labels. That was done due to a lack of human disagreement data to do a Q&A on. The **head** is trained on a few samples of synthetic data, so it may not generalize to all domains.
 
 -   **Calibration**: if you want stable probabilities without hand-tuning τ, add isotonic calibration on `data/test_preds.npz` or auto-pick τ from `coverage_curve.tsv` to hit a target risk (both are a few lines).
 
