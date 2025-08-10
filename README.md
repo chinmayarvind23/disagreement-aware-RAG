@@ -139,9 +139,10 @@ Setup & run
 
 ### 1) Backend install
 
-`cd app
-
-poetry install or uv sync`
+```
+cd app
+poetry install or uv sync
+```
 
 ### 2) Configure params (`app/.env`)
 
