@@ -128,7 +128,8 @@ Setup & run
 ### 1) Backend install
 
 `cd app
-poetry install              # or: uv sync`
+
+poetry install or uv sync`
 
 ### 2) Configure params (`app/.env`)
 
@@ -169,10 +170,10 @@ open http://localhost:3000`
 ### 5) Reproduce the metrics plot
 
 `# from app/
-poetry run python -m scripts.evals
+`poetry run python -m scripts.evals'
 
-`writes data/coverage_curve.tsv and data/test_preds.npz
-refresh the UI to see the curve & AUC`
+Writes data/coverage_curve.tsv and data/test_preds.npz 
+Refresh the UI to see the curve & AUC
 
 * * * * *
 
