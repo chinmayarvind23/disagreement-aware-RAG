@@ -93,21 +93,35 @@ Tech stack
 Repository layout
 -----------------
 `app/
+
   backend/
+
     main.py             # FastAPI app: /qa, /metrics, /healthz
+
     rag.py              # index/retrieval + answer synthesis (LlamaIndex)
+
     features.py         # sc_var, overlap, entropy features
+
     disagreement.py     # logistic head + decision rule
+
   frontend/
+
     app/page.tsx        # Next.js page (Ask & Cite + plot)
   scripts/
-    evals.py            # builds coverage vs hallucination curve + AUC
+
+    evals.py  # builds coverage vs hallucination curve + AUC
+
     train_head.py       # optional: train the logistic head
   data/
+
     index/...           # cached index
+
     coverage_curve.tsv  # produced by evals
+
     test_preds.npz      # produced by evals (scores + labels)
+
     disagree_head.joblib# saved head (if trained)
+
   .env                  # runtime knobs (see below)`
 
 > **Run everything from `app/`** so Python can import `backend.*` modules cleanly.
@@ -127,9 +141,9 @@ Setup & run
 
 ### 1) Backend install
 
-`cd app
+`cd app'
 
-poetry install or uv sync`
+`poetry install or uv sync`
 
 ### 2) Configure params (`app/.env`)
 
