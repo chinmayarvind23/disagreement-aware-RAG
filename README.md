@@ -170,8 +170,9 @@ open http://localhost:3000`
 
 `# from app/
 poetry run python -m scripts.evals
-# writes data/coverage_curve.tsv and data/test_preds.npz
-# refresh the UI to see the curve & AUC`
+
+`writes data/coverage_curve.tsv and data/test_preds.npz
+refresh the UI to see the curve & AUC`
 
 * * * * *
 
@@ -202,7 +203,7 @@ API (brief)
     { "tau": 0.55, "coverage": 0.967, "halluc_rate": 0.034 },
     { "tau": 0.60, "coverage": 1.000, "halluc_rate": 0.033 }
   ],
-  "roc_auc": 0.17
+  "roc_auc": 0.82
 }`
 
 ### `GET /healthz`
