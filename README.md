@@ -186,7 +186,10 @@ cd app/frontend
 npm install
 npm run dev
 ```
-open http://localhost:3000`
+
+`
+open http://localhost:3000
+`
 
 5) Reproduce the metrics plot
 
