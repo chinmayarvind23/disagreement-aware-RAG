@@ -92,7 +92,7 @@ Tech stack
 
 Repository layout
 -----------------
-`app/
+app/
 
   backend/
 
@@ -122,7 +122,7 @@ Repository layout
 
     disagree_head.joblib# saved head (if trained)
 
-  .env                  # runtime knobs (see below)`
+.env                  # runtime knobs (see below)
 
 > **Run everything from `app/`** so Python can import `backend.*` modules cleanly.
 
