@@ -122,10 +122,6 @@ app/
 
     disagree_head.joblib# saved head (if trained)
 
-.env
-
-  # environment variables for backend (e.g., τ, overlap thresholds)
-
 > **Run everything from `app/`** so Python can import `backend.*` modules cleanly.
 
 * * * * *
@@ -143,9 +139,9 @@ Setup & run
 
 ### 1) Backend install
 
-```cd app
+`cd app
 
-poetry install or uv sync```
+poetry install or uv sync`
 
 ### 2) Configure params (`app/.env`)
 
