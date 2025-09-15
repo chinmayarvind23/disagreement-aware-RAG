@@ -95,34 +95,22 @@ Repository layout
 app/
 
   backend/
-
     main.py             # FastAPI app: /qa, /metrics, /healthz
-
     rag.py              # index/retrieval + answer synthesis (LlamaIndex)
-
     features.py         # sc_var, overlap, entropy features
-
     disagreement.py     # logistic head + decision rule
-
   frontend/
-
     app/page.tsx        # Next.js page (Ask & Cite + plot)
   scripts/
-
     evals.py  # builds coverage vs hallucination curve + AUC
-
     train_head.py       # optional: train the logistic head
   data/
-
     index/...           # cached index
-
     coverage_curve.tsv  # produced by evals
-
     test_preds.npz      # produced by evals (scores + labels)
-
     disagree_head.joblib# saved head (if trained)
 
-> **Run everything from `app/`** so Python can import `backend.*` modules cleanly.
+> **Run from `app/`**
 
 * * * * *
 
@@ -147,7 +135,6 @@ poetry install or uv sync
 2) Configure params (`app/.env`)
 
 ```
-- Abstention policy
 HEAD_TAU=0.60            # τ (risk tolerance). Higher → answer more.
 DEC_MIN_OVERLAP=0.35     # require at least this overlap to answer
 DEC_MAX_SC=0.30          # require self-consistency variance ≤ this
@@ -201,7 +188,7 @@ Refresh the UI to see the curve & AUC
 
 * * * * *
 
-API (brief)
+API description
 -----------
 
 ### `POST /qa`
@@ -230,10 +217,6 @@ API (brief)
   ],
   "roc_auc": 0.82
 }`
-
-### `GET /healthz`
-
-`{ "ok": true }`
 
 * * * * *
 
