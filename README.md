@@ -78,11 +78,11 @@ Note: ROC-AUC on the proxy labels is modest (expected on tiny, synthetic data), 
 Tech stack
 ----------
 
--   **Backend**: FastAPI, Pydantic, scikit-learn, numpy, python-dotenv
+-   **Backend**: FastAPI, Pydantic, scikit-learn, numpy, python-dotenv, HF Transformers
 
 -   **RAG**: LlamaIndex (retrieval & synthesis)
 
--   **Eval auditor**: `facebook/bart-large-mnli` (Transformers)
+-   **Eval auditor and Experiment Tracking**: `facebook/bart-large-mnli` (HF Transformers), Weights and Biases
 
 -   **Frontend**: Next.js (React), Recharts (Coverage--Risk plot)
 
