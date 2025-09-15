@@ -90,25 +90,24 @@ Tech stack
 
 * * * * *
 
-Repository layout
------------------
+```text
 app/
-
-  backend/
-    main.py             # FastAPI app: /qa, /metrics, /healthz
-    rag.py              # index/retrieval + answer synthesis (LlamaIndex)
-    features.py         # sc_var, overlap, entropy features
-    disagreement.py     # logistic head + decision rule
-  frontend/
-    app/page.tsx        # Next.js page (Ask & Cite + plot)
-  scripts/
-    evals.py  # builds coverage vs hallucination curve + AUC
-    train_head.py       # optional: train the logistic head
-  data/
-    index/...           # cached index
-    coverage_curve.tsv  # produced by evals
-    test_preds.npz      # produced by evals (scores + labels)
-    disagree_head.joblib# saved head (if trained)
+├── backend/
+│   ├── main.py              # FastAPI app: /qa, /metrics
+│   ├── rag.py               # index/retrieval + answer synthesis (LlamaIndex)
+│   ├── features.py          # sc_var, overlap, entropy features
+│   └── disagreement.py      # logistic head + decision rule
+├── frontend/
+│   └── app/page.tsx         # Next.js page (Ask & Cite + plot)
+├── scripts/
+│   ├── evals.py             # builds coverage vs hallucination curve + AUC
+│   └── train_head.py        # train the logistic head
+└── data/
+    ├── index/...            # cached index
+    ├── coverage_curve.tsv   # evals
+    ├── test_preds.npz       # evals (scores + labels)
+    └── disagree_head.joblib # saved head
+```
 
 > **Run from `app/`**
 
